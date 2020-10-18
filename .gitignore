@@ -1,3 +1,5 @@
 _build/
+_repo/
 .flatpak-builder/
+*.flatpak
 *.swp
