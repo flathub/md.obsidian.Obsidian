@@ -13,6 +13,7 @@ finish-args:
   - --device=dri
   - --filesystem=home
   - --share=network
+  - --socket=pulseaudio
 modules:
   - name: obsidian
     buildsystem: simple
