@@ -10,10 +10,10 @@ tags:
   - proprietary
 finish-args:
   - --socket=x11
+  - --socket=pulseaudio
   - --device=dri
   - --filesystem=home
   - --share=network
-  - --socket=pulseaudio
 modules:
   - name: obsidian
     buildsystem: simple
