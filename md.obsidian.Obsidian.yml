@@ -13,6 +13,9 @@ finish-args:
   - --socket=pulseaudio
   - --device=dri
   - --filesystem=home
+  - --filesystem=/mnt
+  - --filesystem=/run/media
+  - --filesystem=/media
   - --share=network
 modules:
   - name: obsidian
