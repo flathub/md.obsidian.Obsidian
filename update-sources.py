@@ -18,8 +18,8 @@ def update_release_date(file_name, version, publishing_date):
     releases[0].attrib['date']    = publishing_date
 
     tree = ElementTree.ElementTree(root)
-    print(tree)
-    with open(file_name + ".new", 'wb') as outfile:
+
+    with open(file_name, 'wb') as outfile:
         tree.write(outfile, encoding='UTF-8', xml_declaration=True)
 
 sources = 'sources.json'
