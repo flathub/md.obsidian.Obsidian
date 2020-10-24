@@ -7,18 +7,34 @@ from Crypto.Hash import SHA256
 # https://pypi.org/project/python-dateutil/
 import dateutil.parser
 
-url = 'https://raw.githubusercontent.com/obsidianmd/obsidian-releases/master/desktop-releases.json'
-destination = 'sources.json'
+sources = 'sources.json'
+metadata_url = 'https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest'
 
-response = requests.get(url).json()
+try:
+    response = requests.get(metadata_url).json()
 
-version = response['latestVersion']
+    version = response['name']
 
-download_version = f'https://github.com/obsidianmd/obsidian-releases/releases/download/v{version}/obsidian-{version}.tar.gz'
+    latest_download_url = f'https://github.com/obsidianmd/obsidian-releases/releases/download/v{version}/obsidian-{version}.tar.gz'
 
-print(f'Downloading file from {download_version}')
+except:
+    print('Could not download information on latest release. Exiting now.')
+    sys.exit(1)
 
-downloaded_file = requests.get(download_version)
+try:
+    with open(sources, 'r') as f:
+        current_download_url = json.loads(f.read())['url']
+
+except:
+    current_download_url = ''
+
+if latest_download_url == current_download_url:
+    print(f'No new release. Current release is still {version}')
+    sys.exit(0)
+
+print(f'Downloading file from {latest_download_url}')
+
+downloaded_file = requests.get(latest_download_url)
 
 if downloaded_file.status_code != 200:
     print(f'Error: File not found!')
@@ -33,23 +49,12 @@ result = checksum.hexdigest()
 
 content = {
     'type': 'archive',
-    'url': download_version,
+    'url': latest_download_url,
     'sha256': result
 }
 
-print(f'Placing the following data inside {destination}:')
+print(f'Placing the following data inside {sources}:')
 print(json.dumps(content, sort_keys=True, indent=4))
 
-with open(destination, 'w') as f:
+with open(sources, 'w') as f:
     json.dump(content, f, sort_keys=True, indent=4)
-
-
-posts = requests.get('https://forum.obsidian.md/c/announcements/13.json').json()
-
-formatted_version = f"obsidian-release-v{version.replace('.','-')}"
-
-for post in posts['topic_list']['topics']:
-    if post['slug'] == formatted_version:
-        post_date = dateutil.parser.parse(post['created_at'])
-        break
-
