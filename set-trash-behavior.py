@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 
 # This script serves to work around an issue with folder deletion not behaving properly
+# when attempting to use the system trash
 
 import os
 import sys
 import json
+
+trash_behavior = 'local'
 
 try:
     obsidian_config_home = os.environ['XDG_CONFIG_HOME']
@@ -15,7 +18,7 @@ try:
 
     vaults = obsidian_data['vaults']
 except:
-    print('Could not get Obsidian config. Quitting now.')
+    print('Could not get Obsidian config. Skipping trash behavior update.')
     sys.exit(0)
 
 # Obsidian doesn't have a global trash preference, each vault has to be checked. This also means
@@ -29,7 +32,7 @@ for vault, vault_config in vaults.items():
             vault_data = json.loads(f.read())
 
         if not 'trashOption' in vault_data or vault_data['trashOption'] == 'system':
-            vault_data['trashOption'] = 'local'
+            vault_data['trashOption'] = trash_behavior
 
         with open(vault_config, 'w') as outfile:
             json.dump(vault_data, outfile, indent=2)
