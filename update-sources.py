@@ -4,22 +4,46 @@ import json
 import requests
 import sys
 from Crypto.Hash import SHA256
-# https://pypi.org/project/python-dateutil/
-import dateutil.parser
+from datetime import datetime
+from xml.etree import ElementTree, ElementInclude
+
+def update_release_date(file_name, version, publishing_date):
+    tree = ElementTree.ElementTree(file=file_name)
+    root = tree.getroot()
+
+    releases = root.find('releases')
+
+    releases[0].attrib['version'] = version
+    releases[0].attrib['date']    = publishing_date
+
+    tree = ElementTree.ElementTree(root)
+
+    with open(file_name, "wb") as outfile:
+        tree.write(outfile)
 
 sources = 'sources.json'
+appdata = 'md.obsidian.Obsidian.appdata.xml'
 metadata_url = 'https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest'
 
 try:
     response = requests.get(metadata_url).json()
-
-    version = response['name']
-
-    latest_download_url = f'https://github.com/obsidianmd/obsidian-releases/releases/download/v{version}/obsidian-{version}.tar.gz'
-
 except:
     print('Could not download information on latest release. Exiting now.')
     sys.exit(1)
+
+version = response['name']
+
+for asset in response['assets']:
+    if asset['name'] == f'obsidian-{version}.tar.gz':
+        download_metadata = asset    
+        break
+else:
+    print('Could not find release archive. Exiting now.')
+    sys.exit(1)
+
+latest_download_url = download_metadata['browser_download_url']
+creation_date       = datetime.fromisoformat(download_metadata['created_at'][:-1])
+publishing_date     = f'{creation_date.year}-{creation_date.month}-{creation_date.day}'
 
 try:
     with open(sources, 'r') as f:
@@ -58,3 +82,10 @@ print(json.dumps(content, sort_keys=True, indent=4))
 
 with open(sources, 'w') as f:
     json.dump(content, f, sort_keys=True, indent=4)
+
+update_release_date(appdata, version, publishing_date)
+
+commit_message = f'Updating release version to {version}'
+
+print('Meta has been updated. Now run the following:\n')
+print(f'git add {appdata} {sources} && git commit -m \"{commit_message}\" && git push\n')
