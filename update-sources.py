@@ -87,5 +87,5 @@ update_release_date(appdata, version, publishing_date)
 
 commit_message = f'Updating release version to {version}'
 
-print('Meta has been updated. Now run the following:\n')
+print('Release metadata has been updated. Now run the following commands:\n')
 print(f'git add {appdata} {sources} && git commit -m \"{commit_message}\" && git push\n')
