@@ -9,6 +9,7 @@ from xml.etree import ElementTree, ElementInclude
 
 def update_release_date(file_name, version, publishing_date):
     tree = ElementTree.ElementTree(file=file_name)
+    print(dir(tree))
     root = tree.getroot()
 
     releases = root.find('releases')
@@ -17,9 +18,9 @@ def update_release_date(file_name, version, publishing_date):
     releases[0].attrib['date']    = publishing_date
 
     tree = ElementTree.ElementTree(root)
-
-    with open(file_name, "wb") as outfile:
-        tree.write(outfile)
+    print(tree)
+    with open(file_name + ".new", 'wb') as outfile:
+        tree.write(outfile, encoding='UTF-8', xml_declaration=True)
 
 sources = 'sources.json'
 appdata = 'md.obsidian.Obsidian.appdata.xml'
