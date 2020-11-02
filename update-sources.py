@@ -9,7 +9,6 @@ from xml.etree import ElementTree, ElementInclude
 
 def update_release_date(file_name, version, publishing_date):
     tree = ElementTree.ElementTree(file=file_name)
-    print(dir(tree))
     root = tree.getroot()
 
     releases = root.find('releases')
