@@ -18,14 +18,6 @@ finish-args:
   - --filesystem=/media
   - --share=network
 modules:
-  - name: xdg-utils
-    buildsystem: meson
-    sources:
-      - type: git
-        url: https://github.com/flatpak/flatpak-xdg-utils
-        tag: 1.0.4
-    cleanup:
-      - /lib/debug
   - name: obsidian
     buildsystem: simple
     build-commands:
