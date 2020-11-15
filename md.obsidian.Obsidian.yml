@@ -18,6 +18,21 @@ finish-args:
   - --filesystem=/media
   - --share=network
 modules:
+  - name: git
+    make-args:
+      - INSTALL_SYMLINKS=1
+      - NO_PERL=YesPlease
+      - NO_TCLTK=YesPlease
+    make-install-args:
+      - INSTALL_SYMLINKS=1
+      - NO_PERL=YesPlease
+      - NO_TCLTK=YesPlease
+    post-install:
+      - find . -type f -name perllocal.pod -delete
+    sources:
+      - type: archive
+        sha256: f2fc436ebe657821a1360bcd1e5f4896049610082419143d60f6fa13c2f607c1
+        url: https://kernel.org/pub/software/scm/git/git-2.29.2.tar.xz
   - name: obsidian
     buildsystem: simple
     build-commands:
