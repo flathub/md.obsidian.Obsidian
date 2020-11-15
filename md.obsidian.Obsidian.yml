@@ -17,6 +17,7 @@ finish-args:
   - --filesystem=/run/media
   - --filesystem=/media
   - --share=network
+  - --share=ipc
 modules:
   - name: git
     make-args:
