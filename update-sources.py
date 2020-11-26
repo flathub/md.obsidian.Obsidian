@@ -71,11 +71,19 @@ checksum = SHA256.new()
 checksum.update(release_archive)
 result = checksum.hexdigest()
 
-content = {
+# Upstream devs plan on freezing aarch64 downloads to 0.9.17 and instead use the self-update mechanism, so the aarch64
+# source archive will be hardcoded
+content = [{
     'type': 'archive',
     'url': latest_download_url,
-    'sha256': result
-}
+    'sha256': result,
+    'only-arches': ['x86_64']
+}, {
+    'type': 'archive',
+    'url': 'https://github.com/obsidianmd/obsidian-releases/releases/download/v0.9.17/obsidian-0.9.17-arm64.tar.gz',
+    'sha256': '5fe41e7b9362d6ca4c2ce6e2b8af811d8586a0ed6fcaaec715fca027bfbb7e33',
+    'only-arches': ['aarch64']
+}]
 
 print(f'Placing the following data inside {sources}:')
 print(json.dumps(content, sort_keys=True, indent=4))
