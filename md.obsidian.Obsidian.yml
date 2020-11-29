@@ -38,11 +38,11 @@ modules:
     buildsystem: simple
     build-commands:
       - mkdir -p bin share/{appdata,applications,icons/hicolor/512x512/apps}
-      - mv md.obsidian.Obsidian.png share/icons/hicolor/512x512/apps/md.obsidian.Obsidian.png
-      - mv md.obsidian.Obsidian.desktop share/applications/md.obsidian.Obsidian.desktop
-      - mv set-trash-behavior.py bin/set-trash-behavior.py
-      - mv obsidian.sh bin/obsidian.sh
-      - mv md.obsidian.Obsidian.appdata.xml share/appdata/md.obsidian.Obsidian.appdata.xml
+      - mv ${FLATPAK_ID}.png         share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
+      - mv ${FLATPAK_ID}.desktop     share/applications/${FLATPAK_ID}.desktop
+      - mv set-trash-behavior.py     bin/set-trash-behavior.py
+      - mv obsidian.sh               bin/obsidian.sh
+      - mv ${FLATPAK_ID}.appdata.xml share/appdata/${FLATPAK_ID}.appdata.xml
       - cp -r * ${FLATPAK_DEST}
     sources:
       - sources.json
