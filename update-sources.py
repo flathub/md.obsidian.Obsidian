@@ -3,9 +3,15 @@
 import json
 import requests
 import sys
+import subprocess
+
 from Crypto.Hash import SHA256
 from datetime import datetime
 from xml.etree import ElementTree, ElementInclude
+
+def git(*args):
+    git_command = ['git', *args]
+    subprocess.run(git_command)
 
 def update_release_date(file_name, version, publishing_date):
     tree = ElementTree.ElementTree(file=file_name)
@@ -45,12 +51,18 @@ latest_download_url = download_metadata['browser_download_url']
 creation_date       = datetime.fromisoformat(download_metadata['created_at'][:-1])
 publishing_date     = f'{creation_date.year}-{creation_date.month}-{creation_date.day}'
 
+current_download_url = ''
+
 try:
     with open(sources, 'r') as f:
-        current_download_url = json.loads(f.read())['url']
-
+        sources_data = json.loads(f.read())
+        for source in sources_data:
+            if source['only-arches'] == ['x86_64']:
+                current_download_url = source['url']
+                break
+        
 except:
-    current_download_url = ''
+    pass
 
 if latest_download_url == current_download_url:
     print(f'No new release. Current release is still {version}')
@@ -95,5 +107,5 @@ update_release_date(appdata, version, publishing_date)
 
 commit_message = f'Updating release version to {version}'
 
-print('Release metadata has been updated. Now run the following commands:\n')
-print(f'git add {appdata} {sources} && git commit -m \"{commit_message}\" && git push\n')
+git('add', appdata, sources)
+git('commit', '-m', commit_message)
