@@ -11,6 +11,7 @@ tags:
 finish-args:
   - --socket=x11
   - --socket=pulseaudio
+  - --socket=ssh-auth
   - --device=dri
   - --filesystem=home
   - --filesystem=/mnt
