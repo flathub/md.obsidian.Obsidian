@@ -19,6 +19,7 @@ finish-args:
   - --filesystem=/media
   - --share=network
   - --share=ipc
+  - --persist=.ssh
 modules:
   - name: git
     make-args:
