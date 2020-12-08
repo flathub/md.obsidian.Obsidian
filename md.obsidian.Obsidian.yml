@@ -60,4 +60,5 @@ modules:
         dest-filename: obsidian.sh
         commands:
           - /app/bin/set-trash-behavior.py
+          - export TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}"
           - zypak-wrapper /app/obsidian $@
