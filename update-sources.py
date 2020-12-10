@@ -5,7 +5,7 @@ import requests
 import sys
 import subprocess
 
-from Crypto.Hash import SHA256
+from hashlib import sha256
 from datetime import datetime
 from xml.etree import ElementTree, ElementInclude
 
@@ -78,7 +78,7 @@ if downloaded_file.status_code != 200:
 
 release_archive = downloaded_file.content
 
-checksum = SHA256.new()
+checksum = sha256()
 
 checksum.update(release_archive)
 result = checksum.hexdigest()
