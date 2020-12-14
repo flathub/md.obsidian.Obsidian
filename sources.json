@@ -3,9 +3,9 @@
         "only-arches": [
             "x86_64"
         ],
-        "sha256": "985d6f98a44175b6990ebf099732a5cad09f988b851f1e7076601ef338869509",
+        "sha256": "72fa588c5588e86d530c41d8e8c048ae16d55646bae042ae7ecfddfd787e05dd",
         "type": "archive",
-        "url": "https://github.com/obsidianmd/obsidian-releases/releases/download/v0.9.20/obsidian-0.9.20.tar.gz"
+        "url": "https://github.com/obsidianmd/obsidian-releases/releases/download/v0.9.22/obsidian-0.9.22.tar.gz"
     },
     {
         "only-arches": [
