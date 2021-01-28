@@ -3,9 +3,9 @@
         "only-arches": [
             "x86_64"
         ],
-        "sha256": "2011ddd7948763535da4c26eda73f644aadd88dfede0a809230d1248dbda5b07",
+        "sha256": "07c325b846045c77bfbaf8a27cf2441826f7b45f79203738a8e93e68b55e62c1",
         "type": "archive",
-        "url": "https://github.com/obsidianmd/obsidian-releases/releases/download/v0.10.9/obsidian-0.10.9.tar.gz"
+        "url": "https://github.com/obsidianmd/obsidian-releases/releases/download/v0.10.11/obsidian-0.10.11.tar.gz"
     },
     {
         "only-arches": [
