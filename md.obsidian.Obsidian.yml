@@ -42,7 +42,6 @@ modules:
       - mkdir -p bin share/{appdata,applications,icons/hicolor/512x512/apps}
       - mv ${FLATPAK_ID}.png         share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
       - mv ${FLATPAK_ID}.desktop     share/applications/${FLATPAK_ID}.desktop
-      - mv set-trash-behavior.py     bin/set-trash-behavior.py
       - mv obsidian.sh               bin/obsidian.sh
       - mv ${FLATPAK_ID}.appdata.xml share/appdata/${FLATPAK_ID}.appdata.xml
       - cp -r * ${FLATPAK_DEST}
@@ -54,11 +53,8 @@ modules:
         path: md.obsidian.Obsidian.desktop
       - type: file
         path: md.obsidian.Obsidian.appdata.xml
-      - type: file
-        path: set-trash-behavior.py
       - type: script
         dest-filename: obsidian.sh
         commands:
-          - /app/bin/set-trash-behavior.py
           - export TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}"
           - zypak-wrapper /app/obsidian $@
