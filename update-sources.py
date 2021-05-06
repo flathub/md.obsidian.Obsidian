@@ -19,8 +19,16 @@ def update_release_date(file_name, version, publishing_date):
 
     releases = root.find('releases')
 
-    releases[0].attrib['version'] = version
-    releases[0].attrib['date']    = publishing_date
+    new_release = ElementTree.Element(
+        'release',
+        attrib={
+            'version': version,
+            'date': publishing_date
+        }
+    )
+    releases[-1].tail = "\n    "
+    releases.append(new_release)
+    releases[-1].tail = "\n  "
 
     tree = ElementTree.ElementTree(root)
 
