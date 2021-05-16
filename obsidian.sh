@@ -2,6 +2,7 @@
 
 set -oue pipefail
 
+export FLATPAK_ID="${FLATPAK_ID:-md.obsidian.Obsidian}"
 export TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}"
 
 # Wayland support can be optionally enabled like so:
