@@ -3,9 +3,9 @@
         "only-arches": [
             "x86_64"
         ],
-        "sha256": "cef589bcc99bd13945617ad3d90520306eae95e4f8dbecbe1786d2650d9fb671",
+        "sha256": "d290304e4c7cf41e92d063deb365d749135d07221cf83c222391d7a14aacfd01",
         "type": "archive",
-        "url": "https://github.com/obsidianmd/obsidian-releases/releases/download/v0.12.12/obsidian-0.12.12.tar.gz"
+        "url": "https://github.com/obsidianmd/obsidian-releases/releases/download/v0.12.15/obsidian-0.12.15.tar.gz"
     },
     {
         "only-arches": [
