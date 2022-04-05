@@ -11,8 +11,8 @@
         "only-arches": [
             "aarch64"
         ],
-        "sha256": "5fe41e7b9362d6ca4c2ce6e2b8af811d8586a0ed6fcaaec715fca027bfbb7e33",
+        "sha256": "324dc78385a1cab5ba4705cfd7049dbdf981f7e3ccae6a94c225f735374b7f96",
         "type": "archive",
-        "url": "https://github.com/obsidianmd/obsidian-releases/releases/download/v0.9.17/obsidian-0.9.17-arm64.tar.gz"
+        "url": "https://github.com/obsidianmd/obsidian-releases/releases/download/v0.13.31/obsidian-0.13.31-arm64.tar.gz"
     }
 ]
