@@ -80,8 +80,8 @@ modules:
       - cp -r * ${FLATPAK_DEST}
     sources:
       - type: archive
-        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v0.14.5/obsidian-0.14.5.tar.gz
-        sha256: 085e410f58a10e045cdbe6f1a841d96fc61c4ddbb381430b5f8c947a4d37fad6
+        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v0.14.6/obsidian-0.14.6.tar.gz
+        sha256: 2a2780135dd22181c3a174eace4d5063e4cf8f017d2d1ce57e6d72160f61b137
         only-arches: [x86_64]
         x-checker-data:
           type: json
