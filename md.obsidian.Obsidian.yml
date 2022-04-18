@@ -89,6 +89,7 @@ modules:
           url-query: .assets[] | select(.name=="obsidian-" + $version + ".tar.gz")
             | .browser_download_url
           version-query: .tag_name | sub("^v"; "")
+          is-main-source: true
       - type: archive
         url: https://github.com/obsidianmd/obsidian-releases/releases/download/v0.13.31/obsidian-0.13.31-arm64.tar.gz
         sha256: 324dc78385a1cab5ba4705cfd7049dbdf981f7e3ccae6a94c225f735374b7f96
