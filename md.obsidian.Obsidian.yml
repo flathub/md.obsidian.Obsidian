@@ -50,8 +50,8 @@ modules:
       - install -m 755 bin/pandoc ${FLATPAK_DEST}/bin/pandoc
     sources:
       - type: archive
-        sha256: 103df36dc21081b7205d763ef7705e340eb0ea7e18694239b328a549892cc007
-        url: https://github.com/jgm/pandoc/releases/download/2.18/pandoc-2.18-linux-amd64.tar.gz
+        sha256: bce0609dfe196784fe0300fb6847a2a246391a5b98e0490e5f7eadb78afb0d74
+        url: https://github.com/jgm/pandoc/releases/download/2.17.1.1/pandoc-2.17.1.1-linux-amd64.tar.gz
         only-arches: [x86_64]
         x-checker-data:
           type: json
