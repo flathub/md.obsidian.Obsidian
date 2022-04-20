@@ -4,6 +4,11 @@ base: org.electronjs.Electron2.BaseApp
 base-version: '21.08'
 runtime: org.freedesktop.Platform
 runtime-version: '21.08'
+add-extensions:
+  org.freedesktop.Sdk.Extension.texlive:
+    version: '21.08'
+    directory: texlive
+    no-autodownload: true
 sdk: org.freedesktop.Sdk
 command: obsidian.sh
 tags:
@@ -23,6 +28,7 @@ finish-args:
   - --persist=~/.ssh
   - --env=OBSIDIAN_USE_WAYLAND=0
   - --talk-name=org.freedesktop.portal.Fcitx
+  - --env=PATH=/usr/bin:/app/bin:/app/texlive/bin:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux
 modules:
   - name: git
     make-args:
@@ -47,6 +53,7 @@ modules:
   - name: pandoc
     buildsystem: simple
     build-commands:
+      - install -d ${FLATPAK_DEST}/texlive
       - install -m 755 bin/pandoc ${FLATPAK_DEST}/bin/pandoc
     sources:
       - type: archive
