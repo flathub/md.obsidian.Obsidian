@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
   <id>md.obsidian.Obsidian</id>
   <launchable type="desktop-id">md.obsidian.Obsidian.desktop</launchable>
@@ -22,7 +22,8 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="0.14.6" date="2022-4-18" />
+    <release version="0.14.5" date="2022-04-11"/>
+    <release version="0.14.6" date="2022-4-18"/>
   </releases>
   <url type="homepage">https://obsidian.md/</url>
   <url type="help">https://obsidian.md/community</url>
