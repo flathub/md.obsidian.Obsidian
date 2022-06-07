@@ -55,28 +55,28 @@ modules:
     build-commands:
       - PREFIX=${FLATPAK_DEST} ./install.sh
     sources:
-     - type: archive
-       strip-components: 0
-       url: https://github.com/git-lfs/git-lfs/releases/download/v3.2.0/git-lfs-linux-amd64-v3.2.0.tar.gz
-       sha256: d6730b8036d9d99f872752489a331995930fec17b61c87c7af1945c65a482a50
-       only-arches: [x86_64]
-       x-checker-data:
-         type: json
-         url: https://api.github.com/repos/git-lfs/git-lfs/releases/latest
-         url-query: .assets[] | select(.name=="git-lfs-linux-amd64-" + $version + ".tar.gz")
-            | .browser_download_url
-         version-query: .tag_name
-     - type: archive
-       strip-components: 0
-       url: https://github.com/git-lfs/git-lfs/releases/download/v3.2.0/git-lfs-linux-arm64-v3.2.0.tar.gz
-       sha256: 8186f0c0f69c30b55863d698e0a20cf79447a81df006b88221c2033d1e893638
-       only-arches: [aarch64]
-       x-checker-data:
-         type: json
-         url: https://api.github.com/repos/git-lfs/git-lfs/releases/latest
-         url-query: .assets[] | select(.name=="git-lfs-linux-arm64-" + $version + ".tar.gz")
-            | .browser_download_url
-         version-query: .tag_name
+      - type: archive
+        strip-components: 1
+        url: https://github.com/git-lfs/git-lfs/releases/download/v3.2.0/git-lfs-linux-amd64-v3.2.0.tar.gz
+        sha256: d6730b8036d9d99f872752489a331995930fec17b61c87c7af1945c65a482a50
+        only-arches: [x86_64]
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/git-lfs/git-lfs/releases/latest
+          url-query: .assets[] | select(.name=="git-lfs-linux-amd64-" + $version + ".tar.gz")
+             | .browser_download_url
+          version-query: .tag_name
+      - type: archive
+        strip-components: 1
+        url: https://github.com/git-lfs/git-lfs/releases/download/v3.2.0/git-lfs-linux-arm64-v3.2.0.tar.gz
+        sha256: 8186f0c0f69c30b55863d698e0a20cf79447a81df006b88221c2033d1e893638
+        only-arches: [aarch64]
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/git-lfs/git-lfs/releases/latest
+          url-query: .assets[] | select(.name=="git-lfs-linux-arm64-" + $version + ".tar.gz")
+             | .browser_download_url
+          version-query: .tag_name
   - name: pandoc
     buildsystem: simple
     build-commands:
