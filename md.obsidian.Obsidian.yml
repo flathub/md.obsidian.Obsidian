@@ -77,7 +77,6 @@ modules:
          url-query: .assets[] | select(.name=="git-lfs-linux-arm64-" + $version + ".tar.gz")
             | .browser_download_url
          version-query: .tag_name
-
   - name: pandoc
     buildsystem: simple
     build-commands:
