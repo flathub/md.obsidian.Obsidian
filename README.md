@@ -24,4 +24,4 @@ The pandoc plugin partially works with the bundled `pandoc` binary, however it c
 
 ```
 flatpak install flathub org.freedesktop.Sdk.Extension.texlive//21.08
-``
+```
