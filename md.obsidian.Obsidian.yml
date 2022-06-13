@@ -63,8 +63,8 @@ modules:
         x-checker-data:
           type: json
           url: https://api.github.com/repos/git-lfs/git-lfs/releases/latest
-          url-query: .assets[] | select(.name=="git-lfs-linux-amd64-" + $version + ".tar.gz")
-             | .browser_download_url
+          url-query: .assets[] | select(.name=="git-lfs-linux-amd64-" + $version +
+            ".tar.gz") | .browser_download_url
           version-query: .tag_name
       - type: archive
         strip-components: 1
@@ -74,8 +74,8 @@ modules:
         x-checker-data:
           type: json
           url: https://api.github.com/repos/git-lfs/git-lfs/releases/latest
-          url-query: .assets[] | select(.name=="git-lfs-linux-arm64-" + $version + ".tar.gz")
-             | .browser_download_url
+          url-query: .assets[] | select(.name=="git-lfs-linux-arm64-" + $version +
+            ".tar.gz") | .browser_download_url
           version-query: .tag_name
   - name: gh
     buildsystem: simple
@@ -83,7 +83,7 @@ modules:
       - install -m 755 bin/gh ${FLATPAK_DEST}/bin/gh
     sources:
       - type: archive
-        sha256: 359ff9d759b67e174214098144a530a8afc4b0c9d738cd07c83ac84390cdc988 
+        sha256: 359ff9d759b67e174214098144a530a8afc4b0c9d738cd07c83ac84390cdc988
         url: https://github.com/cli/cli/releases/download/v2.12.1/gh_2.12.1_linux_amd64.tar.gz
         only-arches: [x86_64]
         x-checker-data:
@@ -93,8 +93,8 @@ modules:
             | .browser_download_url
           version-query: .tag_name | sub("^v"; "")
       - type: archive
-        sha256: 5906fdd8f1cce057b577b298bc5e688f82acf376f1d746c7dce938f689554929 
-        url: https://github.com/cli/cli/releases/download/v2.12.1/gh_2.12.1_linux_arm64.tar.gz
+        sha256: 8064cb7bebfc8cdab4511967671d333b6f9ee68d412415302c1ab57de170f4eb
+        url: https://github.com/cli/cli/releases/download/v2.12.0/gh_2.12.0_linux_arm64.tar.gz
         only-arches: [aarch64]
         x-checker-data:
           type: json
