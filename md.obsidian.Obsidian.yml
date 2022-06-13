@@ -99,7 +99,7 @@ modules:
         x-checker-data:
           type: json
           url: https://api.github.com/repos/cli/cli/releases/latest
-          url-query: .assets[] | select(.name=="pandoc_" + $version + "_linux_arm64.tar.gz")
+          url-query: .assets[] | select(.name=="gh_" + $version + "_linux_arm64.tar.gz")
             | .browser_download_url
           version-query: .tag_name | sub("^v"; "")
   - name: pandoc
