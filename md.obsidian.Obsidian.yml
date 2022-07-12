@@ -43,8 +43,8 @@ modules:
       - find . -type f -name perllocal.pod -delete
     sources:
       - type: archive
-        sha256: 9f7fa1711bd00c4ec3dde2fe44407dc13f12e4772b5e3c72a58db4c07495411f
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.37.0.tar.xz
+        sha256: c8162c6b8b8f1c5db706ab01b4ee29e31061182135dc27c4860224aaec1b3500
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.37.1.tar.xz
         x-checker-data:
           type: html
           url: https://mirrors.edge.kernel.org/pub/software/scm/git/
@@ -139,8 +139,8 @@ modules:
       - cp -r * ${FLATPAK_DEST}
     sources:
       - type: archive
-        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v0.14.15/obsidian-0.14.15.tar.gz
-        sha256: 6d22ede049e50adc5978a21a86beb5f2a32e2bda20521c67f8d28ed863e48ce4
+        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v0.15.6/obsidian-0.15.6.tar.gz
+        sha256: 609dd8c7d2cfe4acb9d2ac9e909dc4fccaa0ad86cdfa7f0095ce86a377a14ae4
         only-arches: [x86_64]
         x-checker-data:
           type: json
