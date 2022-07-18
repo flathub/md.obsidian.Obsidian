@@ -93,8 +93,8 @@ modules:
             | .browser_download_url
           version-query: .tag_name | sub("^v"; "")
       - type: archive
-        sha256: 67aa87a824586f55600a5e8b7beb017ad14ba416110db9680c9829064c549c20
-        url: https://github.com/cli/cli/releases/download/v2.14.2/gh_2.14.2_linux_arm64.tar.gz
+        sha256: ddfe5cceb508faab19192f04b5d593a13bc6e00c978a5f543b00677d4f676c0c
+        url: https://github.com/cli/cli/releases/download/v2.14.0/gh_2.14.0_linux_arm64.tar.gz
         only-arches: [aarch64]
         x-checker-data:
           type: json
