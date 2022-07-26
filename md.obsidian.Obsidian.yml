@@ -139,8 +139,8 @@ modules:
       - cp -r * ${FLATPAK_DEST}
     sources:
       - type: archive
-        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v0.15.8/obsidian-0.15.8.tar.gz
-        sha256: 816fd01af9cdb65f689f84d47b604ca6f0e8438621932aeda953d40f78929fb8
+        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v0.15.9/obsidian-0.15.9.tar.gz
+        sha256: 433d4873916dc57224f09ff6b293596aaa4f220c77c8dc9788042595b56b1a3c
         only-arches: [x86_64]
         x-checker-data:
           type: json
