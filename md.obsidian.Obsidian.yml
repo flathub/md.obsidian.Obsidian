@@ -150,9 +150,16 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           is-main-source: true
       - type: archive
-        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v0.13.31/obsidian-0.13.31-arm64.tar.gz
-        sha256: 324dc78385a1cab5ba4705cfd7049dbdf981f7e3ccae6a94c225f735374b7f96
+        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v0.15.9/obsidian-0.15.9-arm64.tar.gz
+        sha256: 2ef540f0c35f39b8db4eeb0c12a50355906396971142770979acee1de99efcb2
         only-arches: [aarch64]
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest
+          url-query: .assets[] | select(.name=="obsidian-" + $version + "-arm64" + ".tar.gz")
+            | .browser_download_url
+          version-query: .tag_name | sub("^v"; "")
+          is-main-source: true
       - type: file
         path: md.obsidian.Obsidian.png
       - type: file
