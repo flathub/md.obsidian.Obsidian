@@ -83,8 +83,8 @@ modules:
       - install -m 755 bin/gh ${FLATPAK_DEST}/bin/gh
     sources:
       - type: archive
-        sha256: 673a3adff9a847298e39c4593877194198229c12a9a4f4333765e58de230ccb0
-        url: https://github.com/cli/cli/releases/download/v2.14.4/gh_2.14.4_linux_amd64.tar.gz
+        sha256: bc4fab8fc03b48ed8b5ebd6f4b7b40618b319f3e066dcf34bf509265562339bb
+        url: https://github.com/cli/cli/releases/download/v2.14.5/gh_2.14.5_linux_amd64.tar.gz
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -93,8 +93,8 @@ modules:
             | .browser_download_url
           version-query: .tag_name | sub("^v"; "")
       - type: archive
-        sha256: c9dfac4764b817e5638026bd1a6e17c35e42933df6c09c8f47e19f661ade4b00
-        url: https://github.com/cli/cli/releases/download/v2.14.4/gh_2.14.4_linux_arm64.tar.gz
+        sha256: 786d0cb269dc45a10254913407c0654a9e4d7130785961e412e9ceeef6a72cf9
+        url: https://github.com/cli/cli/releases/download/v2.14.5/gh_2.14.5_linux_arm64.tar.gz
         only-arches: [aarch64]
         x-checker-data:
           type: json
@@ -156,8 +156,8 @@ modules:
         x-checker-data:
           type: json
           url: https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest
-          url-query: .assets[] | select(.name=="obsidian-" + $version + "-arm64" + ".tar.gz")
-            | .browser_download_url
+          url-query: .assets[] | select(.name=="obsidian-" + $version + "-arm64" +
+            ".tar.gz") | .browser_download_url
           version-query: .tag_name | sub("^v"; "")
           is-main-source: true
       - type: file
