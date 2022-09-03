@@ -33,3 +33,8 @@ This flatpak bundles the `gh` binary (the github cli), so use that to login from
 ```
 $ flatpak run --command=gh md.obsidian.Obsidian auth login
 ```
+```
+$ flatpak run --command=gh md.obsidian.Obsidian auth setup-git
+```
+
+
