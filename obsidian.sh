@@ -10,6 +10,11 @@ export TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}"
 declare -i OBSIDIAN_USE_WAYLAND="${OBSIDIAN_USE_WAYLAND:-0}"
 declare -i EXIT_CODE=0
 
+# Discord RPC
+for i in {0..9}; do
+    test -S "$XDG_RUNTIME_DIR"/"discord-ipc-$i" || ln -sf {app/com.discordapp.Discord,"$XDG_RUNTIME_DIR"}/"discord-ipc-$i";
+done
+
 if [[ "${OBSIDIAN_USE_WAYLAND}" -eq 1 && "${XDG_SESSION_TYPE}" == "wayland" ]]; then
     zypak-wrapper /app/obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland $@ || EXIT_CODE=$?
     # Fall back to x11 if Obsidian failed to launch under Wayland. Otherwise, exit normally
