@@ -1,4 +1,5 @@
-# Obsidian flatpak
+Obsidian flatpak
+----------------
 
 This distribution is currently in beta and not officially supported by the Obsidian team.
 
@@ -12,18 +13,24 @@ $ flatpak install md.obsidian.Obsidian
 
 ## Wayland support
 
-Obsidian can now start under Wayland, which can be enabled with `OBSIDIAN_USE_WAYLAND=1` in [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal). It can also be enabled on the command line, like so:
+Wayland support can be enabled by setting the environment variable `OBSIDIAN_USE_WAYLAND=1` either using [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal), or the command line, like so:
 
 ```
 $ flatpak override --user --env=OBSIDIAN_USE_WAYLAND=1 md.obsidian.Obsidian
 ```
 
-## Pandoc support
-
-The pandoc plugin partially works with the bundled `pandoc` binary; however, it currently requires an additional SDK in order to utilize `pdflatex`:
+Wayland support can also be temporarily enabled for a single run:
 
 ```
-$ flatpak install flathub org.freedesktop.Sdk.Extension.texlive//21.08
+$ flatpak run --env=OBSIDIAN_USE_WAYLAND=1 md.obsidian.Obsidian
+```
+
+## Pandoc support
+
+The pandoc plugin partially works with the bundled `pandoc` binary; however, it requires an extension to utilize `pdflatex`:
+
+```
+$ flatpak install flathub org.freedesktop.Sdk.Extension.texlive//22.08
 ```
 
 ## Obsidian Git plugin support for Github login
