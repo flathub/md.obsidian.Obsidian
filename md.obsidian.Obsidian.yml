@@ -160,7 +160,6 @@ modules:
           url-query: .assets[] | select(.name=="obsidian-" + $version + "-arm64" +
             ".tar.gz") | .browser_download_url
           version-query: .tag_name | sub("^v"; "")
-          is-main-source: true
       - type: file
         path: md.obsidian.Obsidian.png
       - type: file
