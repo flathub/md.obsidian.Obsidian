@@ -1,7 +1,7 @@
 Obsidian flatpak
 ----------------
 
-This distribution is currently in beta and not officially supported by the Obsidian team.
+This distribution is not officially supported by the Obsidian team.
 
 ## Installation
 
