@@ -84,8 +84,8 @@ modules:
       - install -m 755 bin/gh ${FLATPAK_DEST}/bin/gh
     sources:
       - type: archive
-        sha256: 1dbafd8139e2ddf64f0c86a9e85fe89d843b904a6bae9eaf1b0127111bafa478
-        url: https://github.com/cli/cli/releases/download/v2.16.1/gh_2.16.1_linux_amd64.tar.gz
+        sha256: c6ce28981a1fb9acb13ee091b5f3de8eb244a67dc99aff1d106985c1e94c72c6
+        url: https://github.com/cli/cli/releases/download/v2.17.0/gh_2.17.0_linux_amd64.tar.gz
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -94,8 +94,8 @@ modules:
             | .browser_download_url
           version-query: .tag_name | sub("^v"; "")
       - type: archive
-        sha256: 6aacaf0872176f3eb412eec844af0477320ce43181ad7322230e84937feca7e6
-        url: https://github.com/cli/cli/releases/download/v2.16.1/gh_2.16.1_linux_arm64.tar.gz
+        sha256: d373e305512e53145df7064a0253df696fe17f9ec71804311239f3e2c9e19999
+        url: https://github.com/cli/cli/releases/download/v2.17.0/gh_2.17.0_linux_arm64.tar.gz
         only-arches: [aarch64]
         x-checker-data:
           type: json
@@ -140,8 +140,8 @@ modules:
       - cp -r * ${FLATPAK_DEST}
     sources:
       - type: archive
-        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v0.15.9/obsidian-0.15.9.tar.gz
-        sha256: 433d4873916dc57224f09ff6b293596aaa4f220c77c8dc9788042595b56b1a3c
+        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.0.0/obsidian-1.0.0.tar.gz
+        sha256: 1f50a5f52073fe6c0df207b3164715e0ac48efec558d057602dc8b2b28d5a48f
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -151,8 +151,8 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           is-main-source: true
       - type: archive
-        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v0.15.9/obsidian-0.15.9-arm64.tar.gz
-        sha256: 2ef540f0c35f39b8db4eeb0c12a50355906396971142770979acee1de99efcb2
+        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.0.0/obsidian-1.0.0-arm64.tar.gz
+        sha256: 1c180a6711ce68a46789e27ac1ba77cd28c3f0fb9e5c0f6594d089cfb0a35c84
         only-arches: [aarch64]
         x-checker-data:
           type: json
