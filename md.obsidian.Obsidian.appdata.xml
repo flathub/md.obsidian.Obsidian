@@ -12,6 +12,7 @@
     <p>There is now experimental Wayland support that can be enabled with OBSIDIAN_USE_WAYLAND=1 in Flatseal</p>
     <p>pdflatex support in pandoc currently requires installing the org.freedesktop.Sdk.Extension.texlive SDK</p>
     <p>Note: Regular users should disable "Automatic Updates" within Obsidian as public release updates are handled by Flatpak itself. Insiders should keep this enabled to receive insider builds, as those will not be made available on Flathub.</p>
+    <p>This flatpak goes into great lengths to provide a nice experience for end users. In order for the Git plugin to work it requires permission to the ssh-auth socket (--socket=ssh-auth). It also exposes the home directory in the sandbox (required for Drag and Drop operations). If you don't use the Git plugin you can disable the ssh-auth socket permission, e.g. using Flatseal. You can also remove access to the home directory if you want and the flatpak will continue to work, albeit with reduced functionality. In case you do remove access to the homedir, note that in order for things to not break for the Git plugin, --persist=.ssh flag has been passed and a bind mount to ~/.var/app/md.obsidian.Obsidian/ is created by flatpak, allowing that location to be used for persistent data (but your home directory's .ssh remains unaccessible)</p>
   </description>
   <screenshots>
     <screenshot type="default">
