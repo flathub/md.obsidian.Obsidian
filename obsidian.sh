@@ -16,7 +16,7 @@ for i in {0..9}; do
 done
 
 if [[ "${OBSIDIAN_USE_WAYLAND}" -eq 1 && "${XDG_SESSION_TYPE}" == "wayland" ]]; then
-    zypak-wrapper /app/obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland $@ || EXIT_CODE=$?
+    zypak-wrapper /app/obsidian --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland $@ || EXIT_CODE=$?
     # Fall back to x11 if Obsidian failed to launch under Wayland. Otherwise, exit normally
     [[ "${EXIT_CODE}" -ne 133 ]] && exit "${EXIT_CODE}"
 fi
