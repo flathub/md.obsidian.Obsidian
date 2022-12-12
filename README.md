@@ -25,6 +25,20 @@ Wayland support can also be temporarily enabled for a single run:
 $ flatpak run --env=OBSIDIAN_USE_WAYLAND=1 md.obsidian.Obsidian
 ```
 
+## GPU acceleration
+
+GPU acceleration may need to be disabled to avoid launching with a black window when using Nvidia GPUs:
+
+```
+$ flatpak override --user --env=OBSIDIAN_DISABLE_GPU=1 md.obsidian.Obsidian
+```
+
+Disabling the GPU sandbox may also be necessary:
+
+```
+$ flatpak override --user --env=OBSIDIAN_DISABLE_GPU_SANDBOX=1 md.obsidian.Obsidian
+```
+
 ## Pandoc support
 
 The pandoc plugin partially works with the bundled `pandoc` binary; however, it requires an extension to utilize `pdflatex`:
