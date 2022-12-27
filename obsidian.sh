@@ -21,7 +21,7 @@ add_argument OBSIDIAN_DISABLE_GPU_SANDBOX --disable-gpu-sandbox
 # flatpak override --user --env=OBSIDIAN_USE_WAYLAND=1 md.obsidian.Obsidian
 if [[ "${XDG_SESSION_TYPE:-''}" == "wayland" ]] || [[ "${WAYLAND_DISPLAY:-''}" == "wayland-*" ]]; then
     add_argument OBSIDIAN_USE_WAYLAND     --ozone-platform=wayland \
-	                                  --enable-features=WaylandWindowDecorations,WaylandWindowDecorations
+	                                  --enable-features=UseOzonePlatform,WaylandWindowDecorations
 fi
 
 echo "Debug: Will run Obsidian with the following arguments: ${EXTRA_ARGS[@]}"
