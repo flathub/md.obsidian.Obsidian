@@ -134,8 +134,8 @@ modules:
   - name: obsidian
     buildsystem: simple
     build-commands:
-      - mkdir -p bin share/{appdata,applications,icons/hicolor/512x512/apps}
-      - mv ${FLATPAK_ID}.png         share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
+      - mkdir -p bin share/{appdata,applications,icons/hicolor/{16x16,32x32,64x64,128x128,256x256,512x512}/apps}
+      - for SIZE in {16,32,64,128,256,512}; do mv ${FLATPAK_ID}-${SIZE}x${SIZE}.png share/icons/hicolor/${SIZE}x${SIZE}/apps/${FLATPAK_ID}.png; done
       - mv ${FLATPAK_ID}.desktop     share/applications/${FLATPAK_ID}.desktop
       - mv obsidian.sh               bin/obsidian.sh
       - mv ${FLATPAK_ID}.appdata.xml share/appdata/${FLATPAK_ID}.appdata.xml
@@ -163,7 +163,17 @@ modules:
             ".tar.gz") | .browser_download_url
           version-query: .tag_name | sub("^v"; "")
       - type: file
-        path: md.obsidian.Obsidian.png
+        path: icons/md.obsidian.Obsidian-16x16.png
+      - type: file
+        path: icons/md.obsidian.Obsidian-32x32.png
+      - type: file
+        path: icons/md.obsidian.Obsidian-64x64.png
+      - type: file
+        path: icons/md.obsidian.Obsidian-128x128.png
+      - type: file
+        path: icons/md.obsidian.Obsidian-256x256.png
+      - type: file
+        path: icons/md.obsidian.Obsidian-512x512.png
       - type: file
         path: md.obsidian.Obsidian.desktop
       - type: file
