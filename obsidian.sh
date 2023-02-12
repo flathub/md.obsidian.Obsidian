@@ -24,6 +24,8 @@ if [[ "${XDG_SESSION_TYPE:-''}" == "wayland" ]] || [[ "${WAYLAND_DISPLAY:-''}" =
 	                                  --enable-features=UseOzonePlatform,WaylandWindowDecorations
 fi
 
+add_argument OBSIDIAN_ENABLE_AUTOSCROLL   --enable-blink-features=MiddleClickAutoscroll
+
 echo "Debug: Will run Obsidian with the following arguments: ${EXTRA_ARGS[@]}"
 echo "Debug: Additionally, user gave: $@"
 
