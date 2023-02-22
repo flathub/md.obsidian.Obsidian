@@ -27,6 +27,7 @@ finish-args:
   - --share=network
   - --share=ipc
   - --persist=~/.ssh
+  - --env=SSH_ASKPASS=/app/libexec/openssh/ssh-askpass
   - --env=OBSIDIAN_USE_WAYLAND=0
   - --env=OBSIDIAN_DISABLE_GPU=0
   - --env=OBSIDIAN_DISABLE_GPU_SANDBOX=0
@@ -81,6 +82,21 @@ modules:
           url-query: .assets[] | select(.name=="git-lfs-linux-arm64-" + $version +
             ".tar.gz") | .browser_download_url
           version-query: .tag_name
+  - name: ssh-askpass
+    buildsystem: simple
+    build-commands:
+      - cd contrib && make gnome-ssh-askpass3
+      - install -Dm755 contrib/gnome-ssh-askpass3 ${FLATPAK_DEST}/libexec/openssh/gnome-ssh-askpass
+      - ln -s gnome-ssh-askpass ${FLATPAK_DEST}/libexec/openssh/ssh-askpass
+    sources:
+      - type: archive
+        sha256: 3f66dbf1655fb45f50e1c56da62ab01218c228807b21338d634ebcdf9d71cf46
+        url: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.2p1.tar.gz
+        x-checker-data:
+          type: html
+          url: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/
+          version-pattern: openssh-(\d+\.\d+p\d+).tar.gz
+          url-template: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-$version.tar.gz
   - name: gh
     buildsystem: simple
     build-commands:
