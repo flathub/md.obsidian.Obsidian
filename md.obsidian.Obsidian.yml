@@ -129,8 +129,8 @@ modules:
       - install -m 755 bin/pandoc ${FLATPAK_DEST}/bin/pandoc
     sources:
       - type: archive
-        sha256: 37de6be90055d9a7e1b4e3384cd7fc4c42e138a77f62ddeec12f362bfa3ee18e
-        url: https://github.com/jgm/pandoc/releases/download/3.1/pandoc-3.1-linux-amd64.tar.gz
+        sha256: 52b25f0115517e32047a06d821e63729108027bd06d9605fe8eac0fa83e0bf81
+        url: https://github.com/jgm/pandoc/releases/download/3.1.1/pandoc-3.1.1-linux-amd64.tar.gz
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -139,8 +139,8 @@ modules:
             | .browser_download_url
           version-query: .tag_name
       - type: archive
-        sha256: 501d66de88c6e9d143e6631ded152ced7421bc32b6f16cadab18b2064916fe63
-        url: https://github.com/jgm/pandoc/releases/download/3.1/pandoc-3.1-linux-arm64.tar.gz
+        sha256: d5d62bad35a98b5a6c742e413a148b5e28e62b7eb35ba0e08bc828b5cf1cbb54
+        url: https://github.com/jgm/pandoc/releases/download/3.1.1/pandoc-3.1.1-linux-arm64.tar.gz
         only-arches: [aarch64]
         x-checker-data:
           type: json
