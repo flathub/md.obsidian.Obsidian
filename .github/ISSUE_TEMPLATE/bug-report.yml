@@ -1,0 +1,36 @@
+name: Bug Report
+labels: ["bug"]
+description: 'File bugs that impact the flatpak version of Obsidian'
+body:
+  - type: textarea
+    attributes:
+      label: Description
+      description: |
+        Please describe what happened.
+        Also, please test other Obsidian builds first to ensure this is a flatpak-specific issue: https://github.com/obsidianmd/obsidian-releases/releases
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: System Information
+      description: |
+        Please list system information such as the Linux distribution, desktop environment / window manager, flatpak version, and Obsidian version
+      render: 'bash session'
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Sandbox Permissions
+      description: |
+        Please list sandbox permissions from `flatpak info --show-permissions md.obsidian.Obsidian`
+      render: 'bash session'
+    validations:
+      required: false
+  - type: textarea
+    attributes:
+      label: Logs
+      description: |
+        Please attach logs from `flatpak run md.obsidian.Obsidian`
+      render: 'bash session'
+    validations:
+      required: false

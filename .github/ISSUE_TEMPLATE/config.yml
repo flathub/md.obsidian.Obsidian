@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Upstream Obsidian issue tracker
+    url: https://forum.obsidian.md/c/bug-reports/7
+    about: Issue tracker for anything that impacts Obsidian across all builds (.snap, .deb, .AppImage, flatpak, etc)
