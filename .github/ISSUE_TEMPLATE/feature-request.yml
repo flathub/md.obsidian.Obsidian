@@ -1,0 +1,16 @@
+name: Feature request
+labels: [feature-request]
+description: Request an enhancement to the Obsidian flatpak
+
+body:
+  - type: textarea
+    attributes:
+      label: Additional feature, program, sandbox permission, etc
+      description: |
+        Describe why this enhancement should be in the Obsidian flatpak
+      placeholder: |
+        Tell us what you need
+      value: |
+        I'd like to request the inclusion of `vim` because ...
+    validations:
+      required: true 
