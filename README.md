@@ -55,6 +55,12 @@ This flatpak bundles the `gh` binary (the github cli), so use that to login from
 $ flatpak run --command=gh md.obsidian.Obsidian auth login
 ```
 
+A git repo can also be set up by running the following:
+
+```
+$ flatpak run --command=gh md.obsidian.Obsidian auth setup-git
+```
+
 ## Middle-click auto-scrolling
 
 Middle-click auto-scrolling can be enabled with the following:
