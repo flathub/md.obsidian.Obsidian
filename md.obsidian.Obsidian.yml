@@ -55,6 +55,20 @@ modules:
           url: https://mirrors.edge.kernel.org/pub/software/scm/git/
           version-pattern: git-([\d\.-]+).tar.xz
           url-template: https://mirrors.edge.kernel.org/pub/software/scm/git/git-$version.tar.xz
+  - name: git-crypt
+    buildsystem: simple
+    build-options:
+      env:
+        CXXFLAGS: -DOPENSSL_API_COMPAT=0x30000000L
+        PREFIX: ${FLATPAK_DEST}
+    build-commands:
+      - make
+      - make install
+    sources:
+      - type: git
+        url: https://github.com/AGWA/git-crypt
+        tag: 0.7.0
+  - git-remote-codecommit.yml
   - name: git-lfs
     buildsystem: simple
     build-commands:
