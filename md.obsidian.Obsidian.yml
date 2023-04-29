@@ -34,6 +34,8 @@ finish-args:
   - --env=OBSIDIAN_ENABLE_AUTOSCROLL=0
   - --talk-name=org.freedesktop.portal.Fcitx
   - --env=PATH=/usr/bin:/app/bin:/app/texlive/bin:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux
+cleanup:
+  - /bin/__pycache__
 modules:
   - name: git
     make-args:
@@ -68,6 +70,10 @@ modules:
       - type: git
         url: https://github.com/AGWA/git-crypt
         tag: 0.7.0
+        x-checker-data:
+          type: git
+          tag-pattern: ^(\d+.\d+.\d+)$
+        commit: a1e6311f5622fb6b9027fc087d16062c7261280f
   - git-remote-codecommit.yml
   - name: git-lfs
     buildsystem: simple
@@ -99,7 +105,7 @@ modules:
   - name: ssh-askpass
     buildsystem: simple
     build-commands:
-      - cd contrib && make gnome-ssh-askpass3
+      - make -C contrib gnome-ssh-askpass3
       - install -Dm755 contrib/gnome-ssh-askpass3 ${FLATPAK_DEST}/libexec/openssh/gnome-ssh-askpass
       - ln -s gnome-ssh-askpass ${FLATPAK_DEST}/libexec/openssh/ssh-askpass
     sources:
@@ -114,7 +120,7 @@ modules:
   - name: gh
     buildsystem: simple
     build-commands:
-      - install -m 755 bin/gh ${FLATPAK_DEST}/bin/gh
+      - install -Dm755 bin/gh ${FLATPAK_DEST}/bin/gh
     sources:
       - type: archive
         sha256: 532633d851557d1da80d59addcb3f7ba20ba0341c8990d32d13f4af73ebfb3f0
@@ -140,7 +146,7 @@ modules:
     buildsystem: simple
     build-commands:
       - install -d ${FLATPAK_DEST}/texlive
-      - install -m 755 bin/pandoc ${FLATPAK_DEST}/bin/pandoc
+      - install -Dm755 bin/pandoc ${FLATPAK_DEST}/bin/pandoc
     sources:
       - type: archive
         sha256: 4e1c607f7e4e9243fa1e1f5b208cd4f1d3f6fd055d5d8c39ba0cdc38644e1c35
