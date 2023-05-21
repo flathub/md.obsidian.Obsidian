@@ -61,10 +61,10 @@ A git repo can also be set up by running the following:
 $ flatpak run --command=gh md.obsidian.Obsidian auth setup-git
 ```
 
-The `gh` binary can resolve to `/app/bin/gh` in `~/.gitconfig` after running `gh auth setup-git` in flatpak, which may be problematic if `gh` is needed outside of flatpak. This can be worked around like so:
+The `gh` binary can resolve to `/app/bin/gh` in `~/.gitconfig` after running `gh auth setup-git` in flatpak, [which may be problematic if `gh` is needed outside of flatpak](https://github.com/cli/cli/issues/7420). This can be worked around like so:
 
 ```
-$ sed -i 's@/app/bin/@/usr/bin/@g' ~/.gitconfig
+$ sed -i 's@/app/bin/@@g' ~/.gitconfig
 ```
 
 ## Middle-click auto-scrolling
