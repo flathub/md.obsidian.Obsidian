@@ -32,6 +32,7 @@ finish-args:
   - --env=OBSIDIAN_DISABLE_GPU=0
   - --env=OBSIDIAN_DISABLE_GPU_SANDBOX=0
   - --env=OBSIDIAN_ENABLE_AUTOSCROLL=0
+  - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons
   - --talk-name=org.freedesktop.portal.Fcitx
   - --env=PATH=/usr/bin:/app/bin:/app/texlive/bin:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux
 cleanup:
