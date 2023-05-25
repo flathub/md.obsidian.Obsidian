@@ -75,6 +75,16 @@ Middle-click auto-scrolling can be enabled with the following:
 $ flatpak override --user --env=OBSIDIAN_ENABLE_AUTOSCROLL=1 md.obsidian.Obsidian
 ```
 
+## Calling external programs
+
+Calling an external program may be required under some circumstances. This functionality can be enabled like so:
+
+```bash
+$ flatpak override --user --talk-name=org.freedesktop.Flatpak md.obsidian.Obsidian
+$ flatpak install org.chromium.Chromium
+$ flatpak run --command=/app/libexec/flatpak-spawn/org.chromium.Chromium md.obsidian.Obsidian
+```
+
 ## Flatpak permissions
 
 This flatpak goes into great lengths to provide a nice experience for end users. In order for the [Git plugin](https://github.com/denolehov/obsidian-git) to work it requires permission to the ssh-auth socket (`--socket=ssh-auth`). It also exposes the home directory in the sandbox (required for Drag and Drop operations). If you don't use the Git plugin you can disable the ssh-auth socket permission, e.g. using Flatseal. You can also remove access to the home directory if you want and the flatpak will continue to work, albeit with reduced functionality. In case you do remove access to the homedir, note that in order for things to not break for the Git plugin, `--persist=.ssh` flag has been passed and a bind mount to `~/.var/app/md.obsidian.Obsidian/` is created by flatpak, allowing that location to be used for persistent data (but your home directory's .ssh remains unaccessible)

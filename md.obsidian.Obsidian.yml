@@ -169,6 +169,14 @@ modules:
           url-query: .assets[] | select(.name=="pandoc-" + $version + "-linux-arm64.tar.gz")
             | .browser_download_url
           version-query: .tag_name
+  - name: flatpak-spawn
+    buildsystem: simple
+    build-commands:
+      - install -Dm755 flatpak-app-spawn.sh ${FLATPAK_DEST}/libexec/flatpak-spawn/flatpak-app-spawn.sh
+      - ln -s flatpak-app-spawn.sh ${FLATPAK_DEST}/libexec/flatpak-spawn/org.chromium.Chromium
+    sources:
+      - type: file
+        path: flatpak-app-spawn.sh
   - name: obsidian
     buildsystem: simple
     build-commands:
