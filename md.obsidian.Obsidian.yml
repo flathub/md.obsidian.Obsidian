@@ -28,6 +28,7 @@ finish-args:
   - --share=ipc
   - --persist=~/.ssh
   - --env=SSH_ASKPASS=/app/libexec/openssh/ssh-askpass
+  - --env=GH_PATH=gh
   - --env=OBSIDIAN_USE_WAYLAND=0
   - --env=OBSIDIAN_DISABLE_GPU=0
   - --env=OBSIDIAN_DISABLE_GPU_SANDBOX=0
