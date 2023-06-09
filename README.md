@@ -75,6 +75,16 @@ Middle-click auto-scrolling can be enabled with the following:
 $ flatpak override --user --env=OBSIDIAN_ENABLE_AUTOSCROLL=1 md.obsidian.Obsidian
 ```
 
+## Filesystem access
+
+Obsidian should be able to use [XDG desktop portals](https://docs.flatpak.org/en/latest/desktop-integration.html#portals) to access most directories with mimimal permissions.
+
+Unconditional directory access to specific directories can be granted, like so:
+
+```
+$ flatpak override --user --filesystem=home --filesystem=/run/media --filesystem=/mnt --filesystem=/media md.obsidian.Obsidian
+```
+
 ## Flatpak permissions
 
-This flatpak goes into great lengths to provide a nice experience for end users. In order for the [Git plugin](https://github.com/denolehov/obsidian-git) to work it requires permission to the ssh-auth socket (`--socket=ssh-auth`). It also exposes the home directory in the sandbox (required for Drag and Drop operations). If you don't use the Git plugin you can disable the ssh-auth socket permission, e.g. using Flatseal. You can also remove access to the home directory if you want and the flatpak will continue to work, albeit with reduced functionality. In case you do remove access to the homedir, note that in order for things to not break for the Git plugin, `--persist=.ssh` flag has been passed and a bind mount to `~/.var/app/md.obsidian.Obsidian/` is created by flatpak, allowing that location to be used for persistent data (but your home directory's .ssh remains unaccessible)
+This flatpak goes into great lengths to provide a nice experience for end users. In order for the [Git plugin](https://github.com/denolehov/obsidian-git) to work it requires permission to the ssh-auth socket (`--socket=ssh-auth`). If you don't use the Git plugin you can disable the ssh-auth socket permission, e.g. using Flatseal. You can also remove access to the home directory if you want and the flatpak will continue to work, albeit with reduced functionality. In case you do remove access to the homedir, note that in order for things to not break for the Git plugin, `--persist=.ssh` flag has been passed and a bind mount to `~/.var/app/md.obsidian.Obsidian/` is created by flatpak, allowing that location to be used for persistent data (but your home directory's .ssh remains unaccessible)
