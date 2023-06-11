@@ -19,6 +19,10 @@ finish-args:
   - --socket=pulseaudio
   - --socket=ssh-auth
   - --device=dri
+  - --filesystem=home
+  - --filesystem=/mnt
+  - --filesystem=/run/media
+  - --filesystem=/media
   - --filesystem=xdg-run/app/com.discordapp.Discord:create
   - --share=network
   - --share=ipc
