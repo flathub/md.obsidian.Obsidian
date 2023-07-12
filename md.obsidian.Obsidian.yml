@@ -119,6 +119,59 @@ modules:
           url: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/
           version-pattern: openssh-(\d+\.\d+p\d+).tar.gz
           url-template: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-$version.tar.gz
+  - name: gcr
+    cleanup:
+      - /include
+      - /lib/debug
+      - /lib/girepository-1.0
+      - /lib/pkgconfig
+      - /man
+      - /share/gir-1.0
+      - /share/gtk-doc
+      - /share/doc
+      - /share/man
+      - /share/pkgconfig
+      - '*.a'
+      - '*.la'
+    config-opts:
+      - --disable-schemas-compile
+      - --disable-static
+      - --disable-update-mime
+      - --disable-vala
+      - --enable-valgrind=no
+    sources:
+      - type: archive
+        sha256: 29df50974a90987af694c0fb8926a6b366e68cacd8abd813817cfe1eb5d54524
+        url: https://download.gnome.org/sources/gcr/3.34/gcr-3.34.0.tar.xz
+  - name: pinentry
+    cleanup:
+      - /include
+      - /lib/debug
+      - /share/info
+      - '*.a'
+      - '*.la'
+    config-opts:
+      - --disable-fallback-curses
+      - --disable-ncurses
+      - --disable-pinentry-curses
+      - --disable-pinentry-emacs
+      - --disable-pinentry-fltk
+      - --disable-pinentry-gtk2
+      - --disable-pinentry-qt5
+      - --disable-pinentry-tqt
+      - --disable-pinentry-tty
+      - --enable-libsecret=no
+      - --enable-pinentry-gnome3
+      - --without-libcap
+    sources:
+      - type: archive
+        sha256: 457a185e5a85238fb945a955dc6352ab962dc8b48720b62fc9fa48c7540a4067
+        url: https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-1.2.1.tar.bz2
+        x-checker-data:
+          type: anitya
+          project-id: 3643
+          stable-only: true
+          url-template: https://www.gnupg.org/ftp/gcrypt/pinentry/pinentry-$version.tar.bz2
   - name: gh
     buildsystem: simple
     build-commands:
