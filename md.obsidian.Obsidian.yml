@@ -24,6 +24,7 @@ finish-args:
   - --filesystem=/run/media
   - --filesystem=/media
   - --filesystem=xdg-run/app/com.discordapp.Discord:create
+  - --filesystem=xdg-run/gnupg:ro
   - --share=network
   - --share=ipc
   - --persist=~/.ssh
