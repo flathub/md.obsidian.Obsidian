@@ -113,8 +113,8 @@ modules:
       - ln -s gnome-ssh-askpass ${FLATPAK_DEST}/libexec/openssh/ssh-askpass
     sources:
       - type: archive
-        sha256: 200ebe147f6cb3f101fd0cdf9e02442af7ddca298dffd9f456878e7ccac676e8
-        url: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.3p2.tar.gz
+        sha256: 3608fd9088db2163ceb3e600c85ab79d0de3d221e59192ea1923e23263866a85
+        url: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-9.4p1.tar.gz
         x-checker-data:
           type: html
           url: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/
