@@ -182,8 +182,8 @@ modules:
       - cp -r * ${FLATPAK_DEST}
     sources:
       - type: archive
-        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.4.5/obsidian-1.4.5.tar.gz
-        sha256: 63f4654fedf105b17db6309b4509d0fa3f288332cc7ec40f9ce7620958fe34ad
+        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.4.10/obsidian-1.4.10.tar.gz
+        sha256: 79250d779a66c6d85526b1d307110c3b6ab3d19a7e61d75814b7f33cb90129fe
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -193,8 +193,8 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           is-main-source: true
       - type: archive
-        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.4.5/obsidian-1.4.5-arm64.tar.gz
-        sha256: 7a6c00609a82baf5ec33da2badc30ec9821de71490cfd802805dbce40c23db69
+        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.4.10/obsidian-1.4.10-arm64.tar.gz
+        sha256: d7b00fef6051e370586834a5caea8a3217411bbc35d1443b7d4e138ebc4c66f0
         only-arches: [aarch64]
         x-checker-data:
           type: json
