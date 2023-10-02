@@ -1,12 +1,12 @@
 app-id: md.obsidian.Obsidian
 default-branch: stable
 base: org.electronjs.Electron2.BaseApp
-base-version: '22.08'
+base-version: '23.08'
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: '23.08'
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
-    version: '22.08'
+    version: '23.08'
     directory: texlive
     no-autodownload: true
 sdk: org.freedesktop.Sdk
@@ -183,7 +183,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.4.14/obsidian-1.4.14.tar.gz
-        sha256: 08dcb9e4e3733adb5576da28b32d362b9fb92d3add47244653f95f5744c1ee1e
+        sha256: a854907abdfb364877037a150053ffd2a5f33d627b4aa63619803a6f589a6261
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -194,7 +194,7 @@ modules:
           is-main-source: true
       - type: archive
         url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.4.14/obsidian-1.4.14-arm64.tar.gz
-        sha256: 2577287f09eb4c6838fa6f18cfbd3f4b512ea6ee881d95838b8522781886a987
+        sha256: b1026215707b67b0cb74181f9345d991a25847be185e13e88d4cff790c70c8e4
         only-arches: [aarch64]
         x-checker-data:
           type: json
