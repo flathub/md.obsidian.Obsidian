@@ -1,4 +1,4 @@
-# Generated with flatpak-pip-generator --yaml --requirements-file requirements.txt --runtime=org.freedesktop.Sdk//23.08
+# Generated with flatpak-pip-generator --yaml --requirements-file requirements.txt --runtime=org.freedesktop.Sdk//22.08
 name: python3-git-remote-codecommit
 buildsystem: simple
 build-commands:
@@ -6,8 +6,8 @@ build-commands:
     --prefix=${FLATPAK_DEST} "git-remote-codecommit" --no-build-isolation
 sources:
   - type: file
-    url: https://files.pythonhosted.org/packages/1d/48/6c1118ac9168fcb49900a6a1aefb6d70f44da1da689c498293d133a5f5f1/botocore-1.31.57-py3-none-any.whl
-    sha256: af006248276ff8e19e3ec7214478f6257035eb40aed865e405486500471ae71b
+    url: https://files.pythonhosted.org/packages/90/4c/864b051e7227178fd90f663c667d2483503ca129ed30b26860bcd1d3ea71/botocore-1.31.59-py3-none-any.whl
+    sha256: 6485a700744c60fcbf4bba4fcacb22067f601e79fb0c27fae04cf07b03c5e8f9
   - type: file
     url: https://files.pythonhosted.org/packages/6c/a0/feb4dfa42e8cb1a0bd91667233254e49696cf6618f51ad5629f6efd89dae/git-remote-codecommit-1.17.tar.gz
     sha256: fd4a9ba3fbd88cd455a8e2087765e415da0beaae9932d4e84010069a536de24e
@@ -18,5 +18,5 @@ sources:
     url: https://files.pythonhosted.org/packages/36/7a/87837f39d0296e723bb9b62bbb257d0355c7f6128853c78955f57342a56d/python_dateutil-2.8.2-py2.py3-none-any.whl
     sha256: 961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9
   - type: file
-    url: https://files.pythonhosted.org/packages/c5/05/c214b32d21c0b465506f95c4f28ccbcba15022e000b043b72b3df7728471/urllib3-1.26.16-py2.py3-none-any.whl
-    sha256: 8d36afa7616d8ab714608411b4a3b13e58f463aee519024578e062e141dce20f
+    url: https://files.pythonhosted.org/packages/48/fe/a5c6cc46e9fe9171d7ecf0f33ee7aae14642f8d74baa7af4d7840f9358be/urllib3-1.26.17-py2.py3-none-any.whl
+    sha256: 94a757d178c9be92ef5539b8840d48dc9cf1b2709c9d6b588232a055c524458b
