@@ -7,22 +7,39 @@ body:
       label: Description
       description: |
         Please describe what happened.
-        Also, please test other Obsidian builds first to ensure this is a flatpak-specific issue: https://github.com/obsidianmd/obsidian-releases/releases
+        Also, please test other Obsidian builds (i.e., .tar.gz, .AppImage, .deb, etc) first to ensure this is a flatpak-specific issue: https://github.com/obsidianmd/obsidian-releases/releases
+        Otherwise, please file a bug in the upstream issue tracker: https://forum.obsidian.md/c/bug-reports/7
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Obsidian Version
+      description: |
+        Please list Obsidian version information from `flatpak info md.obsidian.Obsidian`
+      render: 'bash session'
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Sandbox Permissions
+      description: |
+        Please list sandbox permissions from `flatpak info md.obsidian.Obsidian --show-permissions`
+      render: 'bash session'
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Hardware Information
+      description: |
+        Please list hardware information from `lspci -nn | grep -E 'VGA|Display'` and `glxinfo -B`
+      render: 'bash session'
     validations:
       required: true
   - type: textarea
     attributes:
       label: System Information
       description: |
-        Please list system information such as the Linux distribution, desktop environment / window manager, flatpak version, and Obsidian version
-      render: 'bash session'
-    validations:
-      required: false
-  - type: textarea
-    attributes:
-      label: Sandbox Permissions
-      description: |
-        Please list sandbox permissions from `flatpak info --show-permissions md.obsidian.Obsidian`
+        Please list any additional system information such as the Linux distribution, desktop environment / window manager, and flatpak version
       render: 'bash session'
     validations:
       required: false
