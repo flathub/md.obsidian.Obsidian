@@ -14,15 +14,23 @@ add_argument() {
 
 # Nvidia GPUs may need to disable GPU acceleration:
 # flatpak override --user --env=OBSIDIAN_DISABLE_GPU=1 md.obsidian.Obsidian
-add_argument OBSIDIAN_DISABLE_GPU         --disable-gpu
-add_argument OBSIDIAN_DISABLE_GPU_SANDBOX --disable-gpu-sandbox
+add_argument OBSIDIAN_DISABLE_GPU       --disable-gpu
+add_argument OBSIDIAN_ENABLE_AUTOSCROLL --enable-blink-features=MiddleClickAutoscroll
 
 # Wayland support can be optionally enabled like so:
-# flatpak override --user --env=OBSIDIAN_USE_WAYLAND=1 md.obsidian.Obsidian
-if [[ "${XDG_SESSION_TYPE:-''}" == "wayland" ]] || [[ "${WAYLAND_DISPLAY:-''}" =~ wayland-* ]]; then
-    add_argument OBSIDIAN_USE_WAYLAND     --ozone-platform=wayland \
-                                          --ozone-platform-hint=auto \
-	                                  --enable-features=UseOzonePlatform,WaylandWindowDecorations
+# flatpak override --user --socket=wayland md.obsidian.Obsidian
+if [[ "${XDG_SESSION_TYPE:-''}" == "wayland" ]] && [[ -e "${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY:-"wayland-0"}" ]]; then
+    echo "Debug: Enabling Wayland backend"
+    EXTRA_ARGS+=(
+        --ozone-platform-hint=auto
+	--enable-features=WaylandWindowDecorations
+    )
+    if [[ -c /dev/nvidia0 ]]; then
+        echo "Debug: Detecting Nvidia GPU. disabling GPU sandbox."
+        EXTRA_ARGS+=(
+            --disable-gpu-sandbox
+        )
+    fi
 fi
 
 # The cache files created by Electron and Mesa can become incompatible when there's an upgrade to
@@ -39,8 +47,6 @@ if [[ "${OBSIDIAN_CLEAN_CACHE}" -eq 1 ]]; then
         fi
     done
 fi
-
-add_argument OBSIDIAN_ENABLE_AUTOSCROLL   --enable-blink-features=MiddleClickAutoscroll
 
 echo "Debug: Will run Obsidian with the following arguments: ${EXTRA_ARGS[@]}"
 echo "Debug: Additionally, user gave: $@"

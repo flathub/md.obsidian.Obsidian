@@ -13,31 +13,26 @@ $ flatpak install md.obsidian.Obsidian
 
 ## Wayland support
 
-Wayland support can be enabled by setting the environment variable `OBSIDIAN_USE_WAYLAND=1` either using [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal), or the command line, like so:
+Wayland support can be enabled by setting the environment variable `--socket=wayland` either using [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal), or the command line, like so:
 
 ```
-$ flatpak override --user --env=OBSIDIAN_USE_WAYLAND=1 md.obsidian.Obsidian
+$ flatpak override --user --socket=wayland md.obsidian.Obsidian
 ```
 
 Wayland support can also be temporarily enabled for a single run:
 
 ```
-$ flatpak run --env=OBSIDIAN_USE_WAYLAND=1 md.obsidian.Obsidian
+$ flatpak run --socket=wayland md.obsidian.Obsidian
 ```
 
 ## GPU acceleration
 
-GPU acceleration may need to be disabled to avoid launching with a black window when using Nvidia GPUs:
+GPU acceleration may need to be disabled to avoid launching with graphical bugs:
 
 ```
 $ flatpak override --user --env=OBSIDIAN_DISABLE_GPU=1 md.obsidian.Obsidian
 ```
 
-Disabling the GPU sandbox may also be necessary:
-
-```
-$ flatpak override --user --env=OBSIDIAN_DISABLE_GPU_SANDBOX=1 md.obsidian.Obsidian
-```
 
 ## Pandoc support
 
@@ -125,7 +120,7 @@ IPC namespace sharing is required for using the X11 shared memory extension so a
 $ flatpak \
     override \
     --user \
-    --env="OBSIDIAN_USE_WAYLAND=1" \
+    --socket=wayland \
     --unshare=ipc \
     --nosocket=x11 \
     md.obsidian.Obsidian

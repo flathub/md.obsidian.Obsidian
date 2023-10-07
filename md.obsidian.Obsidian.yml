@@ -15,7 +15,6 @@ tags:
   - proprietary
 finish-args:
   - --socket=x11
-  - --socket=wayland
   - --socket=pulseaudio
   - --socket=ssh-auth
   - --device=dri
@@ -31,9 +30,7 @@ finish-args:
   - --persist=~/.ssh
   - --env=SSH_ASKPASS=/app/libexec/openssh/ssh-askpass
   - --env=GH_PATH=gh
-  - --env=OBSIDIAN_USE_WAYLAND=0
   - --env=OBSIDIAN_DISABLE_GPU=0
-  - --env=OBSIDIAN_DISABLE_GPU_SANDBOX=0
   - --env=OBSIDIAN_ENABLE_AUTOSCROLL=0
   - --env=OBSIDIAN_CLEAN_CACHE=1
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons:~/.icons
