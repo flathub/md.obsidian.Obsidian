@@ -25,6 +25,21 @@ if [[ "${XDG_SESSION_TYPE:-''}" == "wayland" ]] || [[ "${WAYLAND_DISPLAY:-''}" =
 	                                  --enable-features=UseOzonePlatform,WaylandWindowDecorations
 fi
 
+# The cache files created by Electron and Mesa can become incompatible when there's an upgrade to
+# either and may cause Obsidian to launch with a blank screen:
+# https://github.com/flathub/md.obsidian.Obsidian/issues/214
+if [[ "${OBSIDIAN_CLEAN_CACHE}" -eq 1 ]]; then
+    CACHE_DIRECTORIES=(
+        "${XDG_CONFIG_HOME}/obsidian/GPUCache"
+    )
+    for CACHE_DIRECTORY in "${CACHE_DIRECTORIES[@]}"; do
+        if [[ -d "${CACHE_DIRECTORY}" ]]; then
+            echo "Deleting cache directory: ${CACHE_DIRECTORY}"
+            rm -rf "${CACHE_DIRECTORY}"
+        fi
+    done
+fi
+
 add_argument OBSIDIAN_ENABLE_AUTOSCROLL   --enable-blink-features=MiddleClickAutoscroll
 
 echo "Debug: Will run Obsidian with the following arguments: ${EXTRA_ARGS[@]}"
