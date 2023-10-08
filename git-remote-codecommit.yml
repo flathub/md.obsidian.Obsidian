@@ -6,8 +6,8 @@ build-commands:
     --prefix=${FLATPAK_DEST} "git-remote-codecommit" --no-build-isolation
 sources:
   - type: file
-    url: https://files.pythonhosted.org/packages/90/4c/864b051e7227178fd90f663c667d2483503ca129ed30b26860bcd1d3ea71/botocore-1.31.59-py3-none-any.whl
-    sha256: 6485a700744c60fcbf4bba4fcacb22067f601e79fb0c27fae04cf07b03c5e8f9
+    url: https://files.pythonhosted.org/packages/02/d8/f7d2a1247b9430c0e8be761b4b2485930d2b45f14ec912ce0fdb4aeec348/botocore-1.31.62.tar.gz
+    sha256: 272b78ac65256b6294cb9cdb0ac484d447ad3a85642e33cb6a3b1b8afee15a4c
     x-checker-data:
       type: pypi
       name: botocore
@@ -24,14 +24,14 @@ sources:
       type: jmespath
       name: botocore
   - type: file
-    url: https://files.pythonhosted.org/packages/36/7a/87837f39d0296e723bb9b62bbb257d0355c7f6128853c78955f57342a56d/python_dateutil-2.8.2-py2.py3-none-any.whl
-    sha256: 961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9
+    url: https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz
+    sha256: 0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86
     x-checker-data:
       type: pypi
       name: python_dateutil
   - type: file
-    url: https://files.pythonhosted.org/packages/48/fe/a5c6cc46e9fe9171d7ecf0f33ee7aae14642f8d74baa7af4d7840f9358be/urllib3-1.26.17-py2.py3-none-any.whl
-    sha256: 94a757d178c9be92ef5539b8840d48dc9cf1b2709c9d6b588232a055c524458b
+    url: https://files.pythonhosted.org/packages/8b/00/db794bb94bf09cadb4ecd031c4295dd4e3536db4da958e20331d95f1edb7/urllib3-2.0.6.tar.gz
+    sha256: b19e1a85d206b56d7df1d5e683df4a7725252a964e3993648dd0fb5a1c157564
     x-checker-data:
       type: pypi
       name: urllib3
