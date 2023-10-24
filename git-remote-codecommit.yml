@@ -6,8 +6,8 @@ build-commands:
     --prefix=${FLATPAK_DEST} "git-remote-codecommit" --no-build-isolation
 sources:
   - type: file
-    url: https://files.pythonhosted.org/packages/00/85/9957836574bb9e744fbb4f15de48a6103d21f1dcff3575b8837884f5ddb9/botocore-1.31.69-py3-none-any.whl
-    sha256: 26b1d2f82cc24987d1c7cc783b2fee04908a8f7b293bf1663884eb0768b1eedf
+    url: https://files.pythonhosted.org/packages/a4/30/70b32be81f5ff04a826718bd7ebb14132e8c98bf7ac17f02e86012d719cb/botocore-1.31.70-py3-none-any.whl
+    sha256: 049bbf526c95b6169f59617a5ff1b0061cb7a0e44992b8c27c6955832b383988
     x-checker-data:
       type: pypi
       packagetype: bdist_wheel
