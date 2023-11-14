@@ -6,8 +6,8 @@ build-commands:
     --prefix=${FLATPAK_DEST} "git-remote-codecommit" --no-build-isolation
 sources:
   - type: file
-    url: https://files.pythonhosted.org/packages/43/49/b44f99a3da877264536ba44e3c601b05a56c3978ba924918263a840afcfc/botocore-1.31.84-py3-none-any.whl
-    sha256: d65bc05793d1a8a8c191a739f742876b4b403c5c713dc76beef262d18f7984a2
+    url: https://files.pythonhosted.org/packages/3b/4a/d163621e2c0317f4a4cfa0d8c11041993ac7e5c68ad376dce3651aea7eb3/botocore-1.32.0-py3-none-any.whl
+    sha256: 9c1e143feb6a04235cec342d2acb31a0f44df3c89f309f839e03e38a75f3f44e
     x-checker-data:
       type: pypi
       packagetype: bdist_wheel
@@ -33,8 +33,8 @@ sources:
       packagetype: bdist_wheel
       name: python_dateutil
   - type: file
-    url: https://files.pythonhosted.org/packages/d2/b2/b157855192a68541a91ba7b2bbcb91f1b4faa51f8bae38d8005c034be524/urllib3-2.0.7-py3-none-any.whl
-    sha256: fdb6d215c776278489906c2f8916e6e7d4f5a9b602ccbcfdf7f016fc8da0596e
+    url: https://files.pythonhosted.org/packages/96/94/c31f58c7a7f470d5665935262ebd7455c7e4c7782eb525658d3dbf4b9403/urllib3-2.1.0-py3-none-any.whl
+    sha256: 55901e917a5896a349ff771be919f8bd99aff50b79fe58fec595eb37bbc56bb3
     x-checker-data:
       type: pypi
       packagetype: bdist_wheel
