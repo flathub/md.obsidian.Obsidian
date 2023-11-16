@@ -35,7 +35,7 @@ sources:
   - type: file
     url: https://files.pythonhosted.org/packages/d2/b2/b157855192a68541a91ba7b2bbcb91f1b4faa51f8bae38d8005c034be524/urllib3-2.0.7-py3-none-any.whl
     sha256: fdb6d215c776278489906c2f8916e6e7d4f5a9b602ccbcfdf7f016fc8da0596e
-    x-checker-data:
-      type: pypi
-      packagetype: bdist_wheel
-      name: urllib3
+    # x-checker-data:
+    #  type: pypi
+    #  packagetype: bdist_wheel
+    #  name: urllib3
