@@ -176,8 +176,8 @@ modules:
       - install -Dm755 rg ${FLATPAK_DEST}/bin/rg
     sources:
       - type: archive
-        sha256: 62cd0efc4d6f1817b9c852859987b4720cd52e0de008418266e8503028dc0c7a
-        url: https://github.com/BurntSushi/ripgrep/releases/download/14.0.3/ripgrep-14.0.3-x86_64-unknown-linux-musl.tar.gz
+        sha256: f84757b07f425fe5cf11d87df6644691c644a5cd2348a2c670894272999d3ba7
+        url: https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep-14.1.0-x86_64-unknown-linux-musl.tar.gz
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -186,8 +186,8 @@ modules:
             | .browser_download_url
           version-query: .tag_name
       - type: archive
-        sha256: 2da98bbf061e177055df6fc4d9603048200645845437f1ba1f3ce028f3753ad3
-        url: https://github.com/BurntSushi/ripgrep/releases/download/14.0.3/ripgrep-14.0.3-aarch64-unknown-linux-gnu.tar.gz
+        sha256: c8c210b99844fbf16b7a36d1c963e8351bca5ff2dd7c788f5fba4ac18ba8c60d
+        url: https://github.com/BurntSushi/ripgrep/releases/download/14.1.0/ripgrep-14.1.0-aarch64-unknown-linux-gnu.tar.gz
         only-arches: [aarch64]
         x-checker-data:
           type: json
