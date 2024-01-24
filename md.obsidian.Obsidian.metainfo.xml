@@ -60,9 +60,7 @@
   <url type="help">https://help.obsidian.md/Home</url>
   <url type="bugtracker">https://github.com/flathub/md.obsidian.Obsidian/issues</url>
   <url type="translate">https://github.com/obsidianmd/obsidian-translations</url>
-  <developer id="obsidian.md">
-    <name>Obsidian</name>
-  </developer>
+  <developer_name>Obsidian</developer_name>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>LicenseRef-proprietary=https://obsidian.md/eula</project_license>
   <content_rating type="oars-1.1">
