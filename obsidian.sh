@@ -19,7 +19,11 @@ add_argument OBSIDIAN_ENABLE_AUTOSCROLL --enable-blink-features=MiddleClickAutos
 
 # Wayland support can be optionally enabled like so:
 # flatpak override --user --socket=wayland md.obsidian.Obsidian
-if [[ -e "${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY:-"wayland-0"}" ]]; then
+
+WL_DISPLAY="${WAYLAND_DISPLAY:-"wayland-0"}"
+# Some compositors a real path a instead of a symlink for WAYLAND_DISPLAY:
+# https://github.com/flathub/md.obsidian.Obsidian/issues/284
+if [[ -e "${XDG_RUNTIME_DIR}/${WL_DISPLAY}" || -e "/${WL_DISPLAY}" ]]; then
     echo "Debug: Enabling Wayland backend"
     EXTRA_ARGS+=(
         --ozone-platform-hint=auto
