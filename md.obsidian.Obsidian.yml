@@ -34,7 +34,6 @@ finish-args:
   - --env=OBSIDIAN_ENABLE_AUTOSCROLL=0
   - --env=OBSIDIAN_CLEAN_CACHE=1
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons:~/.icons
-  - --talk-name=org.freedesktop.portal.Fcitx
   - --env=PATH=/usr/bin:/app/bin:/app/texlive/bin:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux
 cleanup:
   - /bin/__pycache__
@@ -198,11 +197,11 @@ modules:
   - name: obsidian
     buildsystem: simple
     build-commands:
-      - mkdir -p bin share/{appdata,applications,icons/hicolor/512x512/apps}
-      - mv ${FLATPAK_ID}.png         share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
-      - mv ${FLATPAK_ID}.desktop     share/applications/${FLATPAK_ID}.desktop
-      - mv obsidian.sh               bin/obsidian.sh
-      - mv ${FLATPAK_ID}.appdata.xml share/appdata/${FLATPAK_ID}.appdata.xml
+      - mkdir -p bin share/{applications,icons/hicolor/512x512/apps,metainfo}
+      - mv ${FLATPAK_ID}.png          share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
+      - mv ${FLATPAK_ID}.desktop      share/applications/${FLATPAK_ID}.desktop
+      - mv obsidian.sh                bin/obsidian.sh
+      - mv ${FLATPAK_ID}.metainfo.xml share/metainfo/${FLATPAK_ID}.metainfo.xml
       - cp -r * ${FLATPAK_DEST}
     sources:
       - type: archive
@@ -231,6 +230,6 @@ modules:
       - type: file
         path: md.obsidian.Obsidian.desktop
       - type: file
-        path: md.obsidian.Obsidian.appdata.xml
+        path: md.obsidian.Obsidian.metainfo.xml
       - type: file
         path: obsidian.sh
