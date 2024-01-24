@@ -1,7 +1,7 @@
 Obsidian flatpak
 ----------------
 
-This distribution is not officially supported by the Obsidian team.
+This distribution is verified by the Obsidian team but isn't supported.
 
 ## Installation
 
