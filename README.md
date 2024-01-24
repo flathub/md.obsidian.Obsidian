@@ -13,6 +13,11 @@ $ flatpak install md.obsidian.Obsidian
 
 ## Wayland support
 
+Obsidian has a fairly complete Wayland backend which brings about several improvements over X11, including:
+
+* fractional scaling
+* multi-touch gestures such as pinch-zoom
+ 
 Wayland support can be enabled by setting the environment variable `--socket=wayland` either using [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal), or the command line, like so:
 
 ```
