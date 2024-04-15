@@ -30,6 +30,15 @@ Wayland support can also be temporarily enabled for a single run:
 $ flatpak run --socket=wayland md.obsidian.Obsidian
 ```
 
+### Broken functionality on Wayland
+
+There are some features that don't yet work in Obsidian when running as a native Wayland client:
+
+* [Input methods including `Mozc` and `Fcitx5`](https://github.com/flathub/md.obsidian.Obsidian/issues/317)
+* [Pane drag-and-drop](https://forum.obsidian.md/t/cannot-move-rearrange-panes-when-running-under-wayland/42377)
+
+There don't appear to ways to work around these issues, and until they're resolved the Obsidian flatpak will use XWayland by default.
+
 ## GPU acceleration
 
 GPU acceleration may need to be disabled to avoid launching with graphical bugs:
