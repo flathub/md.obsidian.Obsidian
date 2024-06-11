@@ -206,7 +206,7 @@ modules:
     sources:
       - type: archive
         url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.3/obsidian-1.6.3.tar.gz
-        sha256: 12ad9c5178e9d17755791e2dde81b60d4b6c28ea777b79cf30c8739d47380661
+        sha256: 868f04d88abeb3fc3c3639b1cd9a3fcb96a3dcc3606f2bc81a39379d228f2c3c
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -217,7 +217,7 @@ modules:
           is-main-source: true
       - type: archive
         url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.6.3/obsidian-1.6.3-arm64.tar.gz
-        sha256: f82a4f64164a8b5ffe68de888890f1553656e437c25690c48f74abd39e8a0fdd
+        sha256: 4137eb603a43fa9ebb1699b8d96581a260ad0ff40b69e82f030eb98a3abfacb3
         only-arches: [aarch64]
         x-checker-data:
           type: json
