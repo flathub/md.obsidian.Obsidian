@@ -29,7 +29,6 @@ if [[ -e "${XDG_RUNTIME_DIR}/${WL_DISPLAY}" || -e "/${WL_DISPLAY}" ]]; then
         --ozone-platform-hint=auto
 	--enable-features=WaylandWindowDecorations
 	--enable-wayland-ime
-	--gtk-version=4
     )
     if [[ -c /dev/nvidia0 ]]; then
         echo "Debug: Detecting Nvidia GPU. disabling GPU sandbox."
