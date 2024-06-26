@@ -34,8 +34,13 @@ $ flatpak run --socket=wayland md.obsidian.Obsidian
 
 There are some features that don't yet work in Obsidian when running as a native Wayland client:
 
-* [Input methods including `Mozc` and `Fcitx5`](https://github.com/flathub/md.obsidian.Obsidian/issues/317)
-* [Pane drag-and-drop](https://forum.obsidian.md/t/cannot-move-rearrange-panes-when-running-under-wayland/42377)
+1. Input method frameworks
+    * IBus with GNOME: **[does not work](https://github.com/flathub/md.obsidian.Obsidian/issues/317)**.
+    * IBus with KDE Plasma: **[does not work as candidate window is misplaced](https://discuss.kde.org/t/ibus-candidate-window-is-misplaced-for-some-apps/3579)**.
+    * Fcitx5 with GNOME: **does not work**.
+    * Fcitx5 with KDE Plasma: **[works now if configured correctly](https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#KDE%20Plasma)**.
+
+2. [Pane drag-and-drop](https://forum.obsidian.md/t/cannot-move-rearrange-panes-when-running-under-wayland/42377)
 
 There don't appear to ways to work around these issues, and until they're resolved the Obsidian flatpak will use XWayland by default.
 
