@@ -30,12 +30,6 @@ if [[ -e "${XDG_RUNTIME_DIR}/${WL_DISPLAY}" || -e "/${WL_DISPLAY}" ]]; then
 	--enable-features=WaylandWindowDecorations
 	--enable-wayland-ime
     )
-    if [[ -c /dev/nvidia0 ]]; then
-        echo "Debug: Detecting Nvidia GPU. disabling GPU sandbox."
-        EXTRA_ARGS+=(
-            --disable-gpu-sandbox
-        )
-    fi
 fi
 
 # The cache files created by Electron and Mesa can become incompatible when there's an upgrade to
