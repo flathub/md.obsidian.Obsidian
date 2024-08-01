@@ -124,8 +124,8 @@ modules:
       - install -Dm755 bin/gh ${FLATPAK_DEST}/bin/gh
     sources:
       - type: archive
-        sha256: ed2caf962730e0f593a2b6cae42a9b827b8a9c8bdd6efb56eae7feec38bdd0c6
-        url: https://github.com/cli/cli/releases/download/v2.53.0/gh_2.53.0_linux_amd64.tar.gz
+        sha256: c4441b2acfb63feb5fc37a346b0a0a66080d657397f1eb81e3025961dcb06dd3
+        url: https://github.com/cli/cli/releases/download/v2.54.0/gh_2.54.0_linux_amd64.tar.gz
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -134,8 +134,8 @@ modules:
             | .browser_download_url
           version-query: .tag_name | sub("^v"; "")
       - type: archive
-        sha256: 22c4254025ef5acd7e5406a0eade879e868204861fcb3cd51a95a20cda5d221a
-        url: https://github.com/cli/cli/releases/download/v2.53.0/gh_2.53.0_linux_arm64.tar.gz
+        sha256: a660e5ab768390fc1f328df9604930ac06ad5cd7b98e96761be667141fe19c7c
+        url: https://github.com/cli/cli/releases/download/v2.54.0/gh_2.54.0_linux_arm64.tar.gz
         only-arches: [aarch64]
         x-checker-data:
           type: json
