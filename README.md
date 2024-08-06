@@ -42,6 +42,8 @@ There are some features that don't yet work in Obsidian when running as a native
 
 2. [Pane drag-and-drop](https://forum.obsidian.md/t/cannot-move-rearrange-panes-when-running-under-wayland/42377)
 
+3. [Pen tablet support](https://github.com/flathub/md.obsidian.Obsidian/issues/345)
+
 There don't appear to ways to work around these issues, and until they're resolved the Obsidian flatpak will use XWayland by default.
 
 ## GPU acceleration
