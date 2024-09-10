@@ -60,7 +60,7 @@ $ flatpak override --user --env=OBSIDIAN_DISABLE_GPU=1 md.obsidian.Obsidian
 The pandoc plugin partially works with the bundled `pandoc` binary; however, it requires an extension to utilize `pdflatex`:
 
 ```
-$ flatpak install flathub org.freedesktop.Sdk.Extension.texlive//22.08
+$ flatpak install flathub org.freedesktop.Sdk.Extension.texlive//24.08
 ```
 
 ## Obsidian Git plugin support for Github login
