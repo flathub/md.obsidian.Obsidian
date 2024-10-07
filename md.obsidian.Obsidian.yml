@@ -50,8 +50,8 @@ modules:
       - find . -type f -name perllocal.pod -delete
     sources:
       - type: archive
-        sha256: 5ee8a1c68536094a4f7f9515edc154b12a275b8a57dda4c21ecfbf1afbae2ca3
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.46.2.tar.xz
+        sha256: 1ce114da88704271b43e027c51e04d9399f8c88e9ef7542dae7aebae7d87bc4e
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.47.0.tar.xz
         x-checker-data:
           type: html
           url: https://mirrors.edge.kernel.org/pub/software/scm/git/
