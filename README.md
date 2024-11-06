@@ -40,9 +40,7 @@ There are some features that don't yet work in Obsidian when running as a native
     * Fcitx5 with GNOME: **does not work**.
     * Fcitx5 with KDE Plasma: **[works now if configured correctly](https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#KDE%20Plasma)**.
 
-2. [Pane drag-and-drop](https://forum.obsidian.md/t/cannot-move-rearrange-panes-when-running-under-wayland/42377)
-
-3. [Pen tablet support](https://github.com/flathub/md.obsidian.Obsidian/issues/345)
+2. [Pen tablet support](https://github.com/flathub/md.obsidian.Obsidian/issues/345)
 
 There don't appear to ways to work around these issues, and until they're resolved the Obsidian flatpak will use XWayland by default.
 
