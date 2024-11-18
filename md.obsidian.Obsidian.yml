@@ -197,7 +197,7 @@ modules:
     buildsystem: simple
     build-commands:
       - mkdir -p bin share/{applications,icons/hicolor/512x512/apps,metainfo}
-      - mv ${FLATPAK_ID}.png          share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
+      - cp resources/icon.png         share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
       - mv ${FLATPAK_ID}.desktop      share/applications/${FLATPAK_ID}.desktop
       - mv obsidian.sh                bin/obsidian.sh
       - mv ${FLATPAK_ID}.metainfo.xml share/metainfo/${FLATPAK_ID}.metainfo.xml
@@ -224,8 +224,6 @@ modules:
           url-query: .assets[] | select(.name=="obsidian-" + $version + "-arm64" +
             ".tar.gz") | .browser_download_url
           version-query: .tag_name | sub("^v"; "")
-      - type: file
-        path: md.obsidian.Obsidian.png
       - type: file
         path: md.obsidian.Obsidian.desktop
       - type: file
