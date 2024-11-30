@@ -13,7 +13,8 @@ command: obsidian.sh
 tags:
   - proprietary
 finish-args:
-  - --socket=x11
+  - --socket=fallback-x11
+  - --socket=wayland
   - --socket=pulseaudio
   - --socket=ssh-auth
   - --device=dri
@@ -32,6 +33,7 @@ finish-args:
   - --env=OBSIDIAN_DISABLE_GPU=0
   - --env=OBSIDIAN_ENABLE_AUTOSCROLL=0
   - --env=OBSIDIAN_CLEAN_CACHE=1
+  - --env=OZONE_PLATFORM=auto
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons:~/.icons
   - --env=PATH=/usr/bin:/app/bin:/app/texlive/bin:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux
 cleanup:
