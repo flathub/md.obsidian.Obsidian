@@ -12,6 +12,7 @@ sdk: org.freedesktop.Sdk
 command: obsidian.sh
 tags:
   - proprietary
+copy-icon: true
 finish-args:
   - --socket=x11
   - --socket=pulseaudio
