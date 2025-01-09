@@ -201,6 +201,7 @@ modules:
       - mv ${FLATPAK_ID}.desktop      share/applications/${FLATPAK_ID}.desktop
       - mv obsidian.sh                bin/obsidian.sh
       - mv ${FLATPAK_ID}.metainfo.xml share/metainfo/${FLATPAK_ID}.metainfo.xml
+      - mv obsidian ${FLATPAK_ID}
       - cp -r * ${FLATPAK_DEST}
     sources:
       - type: archive

@@ -4,7 +4,6 @@ Exec=obsidian.sh %U
 Terminal=false
 Type=Application
 Icon=md.obsidian.Obsidian
-StartupWMClass=obsidian
 Comment=Obsidian
 MimeType=x-scheme-handler/obsidian;
 Categories=Office;
