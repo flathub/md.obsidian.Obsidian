@@ -50,8 +50,8 @@ modules:
       - find . -type f -name perllocal.pod -delete
     sources:
       - type: archive
-        sha256: 4803b809c42696b3b8cce6b0ba6de26febe1197f853daf930a484db93c1ad0d5
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.48.0.tar.xz
+        sha256: 1c5d545f5dc1eb51e95d2c50d98fdf88b1a36ba1fa30e9ae5d5385c6024f82ad
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.48.1.tar.xz
         x-checker-data:
           type: html
           url: https://mirrors.edge.kernel.org/pub/software/scm/git/
@@ -82,8 +82,8 @@ modules:
     sources:
       - type: archive
         strip-components: 1
-        url: https://github.com/git-lfs/git-lfs/releases/download/v3.6.0/git-lfs-linux-amd64-v3.6.0.tar.gz
-        sha256: fff4746159aa7a7b42ef1aa30fed03b534df48a7dbe116d65296c0f0c43c594d
+        url: https://github.com/git-lfs/git-lfs/releases/download/v3.6.1/git-lfs-linux-amd64-v3.6.1.tar.gz
+        sha256: 2138d2e405a12f1a088272e06790b76699b79cb90d0317b77aafaf35de908d76
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -93,8 +93,8 @@ modules:
           version-query: .tag_name
       - type: archive
         strip-components: 1
-        url: https://github.com/git-lfs/git-lfs/releases/download/v3.6.0/git-lfs-linux-arm64-v3.6.0.tar.gz
-        sha256: 9509504b3b825054c3d07af5edc1cc9c00732c6f0fd4a060f04bfbf0f1279fca
+        url: https://github.com/git-lfs/git-lfs/releases/download/v3.6.1/git-lfs-linux-arm64-v3.6.1.tar.gz
+        sha256: 1c2720ff53528fbe769633d448d830aa7b682141e3c4f6a9f26b9cf3b2548d0a
         only-arches: [aarch64]
         x-checker-data:
           type: json
