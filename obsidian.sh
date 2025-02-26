@@ -2,6 +2,9 @@
 
 set -oue pipefail
 
+readonly OBSIDIAN_USER_ARGS_FILE="${XDG_CONFIG_HOME}/obsidian/user-flags.conf"
+
+USER_ARGS=()
 EXTRA_ARGS=()
 
 add_argument() {
@@ -11,6 +14,14 @@ add_argument() {
         EXTRA_ARGS+=(${@:2})
     fi
 }
+
+if [[ -f "${OBSIDIAN_USER_ARGS_FILE}" && -s "${OBSIDIAN_USER_ARGS_FILE}" ]]; then
+    for LINE in $(grep -v "^ #" "${OBSIDIAN_USER_ARGS_FILE}"); do
+        USER_ARGS+=("${LINE}")
+    done
+    echo "Debug: Found user flags file \"${OBSIDIAN_USER_ARGS_FILE}\" with args \"${USER_ARGS[@]}\""
+fi
+
 
 # Nvidia GPUs may need to disable GPU acceleration:
 # flatpak override --user --env=OBSIDIAN_DISABLE_GPU=1 md.obsidian.Obsidian
@@ -48,7 +59,7 @@ if [[ "${OBSIDIAN_CLEAN_CACHE}" -eq 1 ]]; then
 fi
 
 echo "Debug: Will run Obsidian with the following arguments: ${EXTRA_ARGS[@]}"
-echo "Debug: Additionally, user gave: $@"
+echo "Debug: Additionally, user gave: $@ ${USER_ARGS[@]}"
 
 export FLATPAK_ID="${FLATPAK_ID:-md.obsidian.Obsidian}"
 export TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}"
@@ -58,4 +69,4 @@ for i in {0..9}; do
     test -S "$XDG_RUNTIME_DIR"/"discord-ipc-$i" || ln -sf {app/com.discordapp.Discord,"$XDG_RUNTIME_DIR"}/"discord-ipc-$i";
 done
 
-zypak-wrapper /app/obsidian $@ ${EXTRA_ARGS[@]}
+zypak-wrapper /app/obsidian $@ ${USER_ARGS[@]} ${EXTRA_ARGS[@]}
