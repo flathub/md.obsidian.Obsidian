@@ -2,6 +2,8 @@
 
 set -oue pipefail
 
+export OBSIDIAN_USER_ARGS_FILE="${XDG_CONFIG_HOME}/obsidian/user-flags.conf"
+
 EXTRA_ARGS=()
 
 add_argument() {
@@ -11,6 +13,14 @@ add_argument() {
         EXTRA_ARGS+=(${@:2})
     fi
 }
+
+if [[ -f "${OBSIDIAN_USER_ARGS_FILE}" && -s "${OBSIDIAN_USER_ARGS_FILE}" ]]; then
+    for LINE in $(grep -v "^ *#" "${OBSIDIAN_USER_ARGS_FILE}"); do
+        EXTRA_ARGS+=("${LINE}")
+    done
+    echo "Debug: Found user flags file \"${OBSIDIAN_USER_ARGS_FILE}\" with args \"${EXTRA_ARGS[@]}\""
+fi
+
 
 # Nvidia GPUs may need to disable GPU acceleration:
 # flatpak override --user --env=OBSIDIAN_DISABLE_GPU=1 md.obsidian.Obsidian
