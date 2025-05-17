@@ -39,6 +39,7 @@ if [[ -e "${XDG_RUNTIME_DIR}/${WL_DISPLAY}" || -e "/${WL_DISPLAY}" ]]; then
         --ozone-platform-hint=auto
 	--enable-features=WaylandWindowDecorations
 	--enable-wayland-ime
+	--wayland-text-input-version=3
     )
 fi
 

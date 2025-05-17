@@ -13,36 +13,34 @@ $ flatpak install md.obsidian.Obsidian
 
 ## Wayland support
 
-Obsidian has a fairly complete Wayland backend which brings about several improvements over X11, including:
+Obsidian has a fairly complete Wayland backend which brings about several improvements over X11/XWayland, including:
 
 * fractional scaling
 * multi-touch gestures such as pinch-zoom
  
-Wayland support can be enabled by setting the environment variable `--socket=wayland` either using [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal), or the command line, like so:
+Wayland support can be disabled by setting the environment variable `--nosocket=wayland` either using [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal), or the command line, like so:
 
 ```
-$ flatpak override --user --socket=wayland md.obsidian.Obsidian
+$ flatpak override --user --nosocket=wayland md.obsidian.Obsidian
 ```
 
-Wayland support can also be temporarily enabled for a single run:
+Wayland support can also be temporarily disabled for a single run:
 
 ```
-$ flatpak run --socket=wayland md.obsidian.Obsidian
+$ flatpak run --nosocket=wayland md.obsidian.Obsidian
 ```
 
 ### Broken functionality on Wayland
 
-There are some features that don't yet work in Obsidian when running as a native Wayland client:
+There are some features that may not work with Obsidian when running as a native Wayland client:
 
 1. Input method frameworks
-    * IBus with GNOME: **[does not work](https://github.com/flathub/md.obsidian.Obsidian/issues/317)**.
+    * IBus with GNOME: **should now work with recent versions of GNOME**.
     * IBus with KDE Plasma: **[does not work as candidate window is misplaced](https://discuss.kde.org/t/ibus-candidate-window-is-misplaced-for-some-apps/3579)**.
-    * Fcitx5 with GNOME: **does not work**.
+    * Fcitx5 with GNOME: [**requires the kimpanel extension to treat Fcitx5 like IBus**](https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#GNOME).
     * Fcitx5 with KDE Plasma: **[works now if configured correctly](https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#KDE%20Plasma)**.
 
 2. [Pen tablet support](https://github.com/flathub/md.obsidian.Obsidian/issues/345)
-
-There don't appear to ways to work around these issues, and until they're resolved the Obsidian flatpak will use XWayland by default.
 
 ## GPU acceleration
 
