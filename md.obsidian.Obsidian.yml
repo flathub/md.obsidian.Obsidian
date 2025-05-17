@@ -13,7 +13,8 @@ command: obsidian.sh
 tags:
   - proprietary
 finish-args:
-  - --socket=x11
+  - --socket=fallback-x11
+  - --socket=wayland
   - --socket=pulseaudio
   - --socket=ssh-auth
   - --device=dri
