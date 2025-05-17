@@ -30,6 +30,14 @@ Wayland support can also be temporarily disabled for a single run:
 $ flatpak run --nosocket=wayland md.obsidian.Obsidian
 ```
 
+### Nvidia
+
+There's currently a check in place to disable GPU acceleration when an Nvidia GPU is detected to avoid potential driver issues on Wayland. This check can be disabled altogether with the following:
+
+```
+$ flatpak override --user --env=OBSIDIAN_SKIP_NVIDIA_WAYLAND_CHECK=1 md.obsidian.Obsidian
+```
+
 ### Broken functionality on Wayland
 
 There are some features that may not work with Obsidian when running as a native Wayland client:
