@@ -27,20 +27,30 @@ fi
 add_argument OBSIDIAN_DISABLE_GPU       --disable-gpu
 add_argument OBSIDIAN_ENABLE_AUTOSCROLL --enable-blink-features=MiddleClickAutoscroll
 
-# Wayland support can be optionally enabled like so:
-# flatpak override --user --socket=wayland md.obsidian.Obsidian
+# Wayland support can be disabled like so:
+# flatpak override --user --nosocket=wayland md.obsidian.Obsidian
 
 WL_DISPLAY="${WAYLAND_DISPLAY:-"wayland-0"}"
-# Some compositors a real path a instead of a symlink for WAYLAND_DISPLAY:
+# Some compositors use a real path instead of a symlink for WAYLAND_DISPLAY:
 # https://github.com/flathub/md.obsidian.Obsidian/issues/284
 if [[ -e "${XDG_RUNTIME_DIR}/${WL_DISPLAY}" || -e "/${WL_DISPLAY}" ]]; then
     echo "Debug: Enabling Wayland backend"
     EXTRA_ARGS+=(
         --ozone-platform-hint=auto
-	--enable-features=WaylandWindowDecorations
-	--enable-wayland-ime
-	--wayland-text-input-version=3
+        --enable-features=WaylandWindowDecorations
+        --enable-wayland-ime
+        --wayland-text-input-version=3
     )
+    # Check for Nvidia specifically, and also check to make sure OBSIDIAN_DISABLE_GPU isn't set so --disable-gpu isn't passed twice
+    if [[ -c "/dev/nvidia0" && "${OBSIDIAN_SKIP_NVIDIA_WAYLAND_CHECK}" -eq 0 && "${OBSIDIAN_DISABLE_GPU}" -eq 0 ]]; then
+        echo "Debug: Disabling GPU acceleration to avoid potential Nvidia driver issues on Wayland. Run one of the following flatpak overrides to skip this check or fall back to XWayland:"
+        echo "    flatpak override --user --env=OBSIDIAN_SKIP_NVIDIA_WAYLAND_CHECK=1 md.obsidian.Obsidian"
+        echo "    flatpak override --user --nosocket=wayland md.obsidian.Obsidian"
+        echo
+        EXTRA_ARGS+=(
+            --disable-gpu
+        )
+    fi
 fi
 
 # The cache files created by Electron and Mesa can become incompatible when there's an upgrade to
