@@ -4,7 +4,13 @@ set -oue pipefail
 
 export OBSIDIAN_USER_ARGS_FILE="${XDG_CONFIG_HOME}/obsidian/user-flags.conf"
 
-EXTRA_ARGS=()
+# Borrowed arguments from: https://github.com/flathub/io.github.milkshiift.GoofCord/blob/master/startgoofcord
+EXTRA_ARGS=(
+    --enable-gpu-rasterization     # To support mixed refresh rates + hardware acceleration
+    --ignore-gpu-blocklist         # Forcing hardware acceleration
+    --enable-zero-copy             # Hardware acceleration
+    --enable-drdc                  # Hardware acceleration
+)
 
 add_argument() {
     declare -i "$1"=${!1:-0}
@@ -42,13 +48,10 @@ if [[ -e "${XDG_RUNTIME_DIR}/${WL_DISPLAY}" || -e "/${WL_DISPLAY}" ]]; then
         --wayland-text-input-version=3
     )
     # Check for Nvidia specifically, and also check to make sure OBSIDIAN_DISABLE_GPU isn't set so --disable-gpu isn't passed twice
-    if [[ -c "/dev/nvidia0" && "${OBSIDIAN_SKIP_NVIDIA_WAYLAND_CHECK}" -eq 0 && "${OBSIDIAN_DISABLE_GPU}" -eq 0 ]]; then
-        echo "Debug: Disabling GPU acceleration to avoid potential Nvidia driver issues on Wayland. Run one of the following flatpak overrides to skip this check or fall back to XWayland:"
-        echo "    flatpak override --user --env=OBSIDIAN_SKIP_NVIDIA_WAYLAND_CHECK=1 md.obsidian.Obsidian"
-        echo "    flatpak override --user --nosocket=wayland md.obsidian.Obsidian"
-        echo
+    if [[ -c "/dev/nvidia0" ]]; then
+        echo "Debug: Detecting Nvidia GPU on Wayland, disabling GPU sandbox"
         EXTRA_ARGS+=(
-            --disable-gpu
+            --disable-gpu-sandbox
         )
     fi
 fi
