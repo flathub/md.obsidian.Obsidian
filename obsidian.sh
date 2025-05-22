@@ -27,7 +27,6 @@ if [[ -f "${OBSIDIAN_USER_ARGS_FILE}" && -s "${OBSIDIAN_USER_ARGS_FILE}" ]]; the
     echo "Debug: Found user flags file \"${OBSIDIAN_USER_ARGS_FILE}\" with args \"${EXTRA_ARGS[@]}\""
 fi
 
-
 # Nvidia GPUs may need to disable GPU acceleration:
 # flatpak override --user --env=OBSIDIAN_DISABLE_GPU=1 md.obsidian.Obsidian
 add_argument OBSIDIAN_DISABLE_GPU       --disable-gpu
@@ -47,7 +46,6 @@ if [[ -e "${XDG_RUNTIME_DIR}/${WL_DISPLAY}" || -e "/${WL_DISPLAY}" ]]; then
         --enable-wayland-ime
         --wayland-text-input-version=3
     )
-    # Check for Nvidia specifically, and also check to make sure OBSIDIAN_DISABLE_GPU isn't set so --disable-gpu isn't passed twice
     if [[ -c "/dev/nvidia0" ]]; then
         echo "Debug: Detecting Nvidia GPU on Wayland, disabling GPU sandbox"
         EXTRA_ARGS+=(
