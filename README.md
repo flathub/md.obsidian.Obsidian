@@ -18,21 +18,21 @@ Obsidian has a fairly complete Wayland backend which brings about several improv
 * fractional scaling
 * multi-touch gestures such as pinch-zoom
  
-Wayland support can be disabled by setting the environment variable `--nosocket=wayland` either using [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal), or the command line, like so:
+Wayland support can be enabled by setting the environment variable `--socket=wayland` either using [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal), or the command line, like so:
 
 ```
-$ flatpak override --user --nosocket=wayland md.obsidian.Obsidian
+$ flatpak override --user --socket=wayland md.obsidian.Obsidian
 ```
 
-Wayland support can also be temporarily disabled for a single run:
+Wayland support can also be temporarily enabled for a single run:
 
 ```
-$ flatpak run --nosocket=wayland md.obsidian.Obsidian
+$ flatpak run --socket=wayland md.obsidian.Obsidian
 ```
 
 ### Nvidia
 
-There's currently a check in place to disable GPU sandboxing when an Nvidia GPU is detected to avoid potential driver issues on Wayland. Alternatively, `--nosocket=wayland` may be used to fall back to XWayland.
+There's currently a check in place to disable GPU sandboxing when an Nvidia GPU is detected to avoid potential driver issues on Wayland.
 
 ### Broken functionality on Wayland
 

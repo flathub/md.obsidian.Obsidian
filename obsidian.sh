@@ -4,13 +4,14 @@ set -oue pipefail
 
 export OBSIDIAN_USER_ARGS_FILE="${XDG_CONFIG_HOME}/obsidian/user-flags.conf"
 
+EXTRA_ARGS=()
 # Borrowed arguments from: https://github.com/flathub/io.github.milkshiift.GoofCord/blob/master/startgoofcord
-EXTRA_ARGS=(
-    --enable-gpu-rasterization     # To support mixed refresh rates + hardware acceleration
-    --ignore-gpu-blocklist         # Forcing hardware acceleration
-    --enable-zero-copy             # Hardware acceleration
-    --enable-drdc                  # Hardware acceleration
-)
+# EXTRA_ARGS=(
+#    --enable-gpu-rasterization     # To support mixed refresh rates + hardware acceleration
+#    --ignore-gpu-blocklist         # Forcing hardware acceleration
+#    --enable-zero-copy             # Hardware acceleration
+#    --enable-drdc                  # Hardware acceleration
+#)
 
 add_argument() {
     declare -i "$1"=${!1:-0}
