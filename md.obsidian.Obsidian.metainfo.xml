@@ -9,7 +9,7 @@
     <p>The documentation can be accessed by opening the demo vault that is shipped in Obsidian.</p>
     <p>Obsidian will always remain free for personal use, no account or license is required for qualifying use cases described in the End User License Agreement. However, commercial users should purchase a license on Obsidian's website. Users also have the option to purchase a Catalyst license to get early access to insider builds and support the development. Additionally, Obsidian offers an optional paid hosting service for your notes. Details about this optional hosting service can be found on the Obsidian website.</p>
     <p>This distribution is verified by the Obsidian team but isn't supported</p>
-    <p>Wayland support can be disabled with --nosocket=wayland in Flatseal if there are any bugs such as broken pen tablet support, missing window borders, or graphical bugs</p>
+    <p>Wayland support can be enabled with --socket=wayland in Flatseal to enable features like pinch zoom, however there may be bugs such as broken pen tablet support, missing window borders, or graphical artifacts</p>
     <p>GPU acceleration can be disabled if necessary by setting OBSIDIAN_DISABLE_GPU=1 in Flatseal</p>
     <p>Pdflatex support in pandoc currently requires installing the org.freedesktop.Sdk.Extension.texlive SDK</p>
     <p>Note: Regular users should disable "Automatic Updates" within Obsidian as public release updates are handled by Flatpak itself. Insiders should keep this enabled to receive insider builds, as those will not be made available on Flathub.</p>
