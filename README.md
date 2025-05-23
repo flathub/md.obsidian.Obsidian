@@ -30,6 +30,10 @@ Wayland support can also be temporarily disabled for a single run:
 $ flatpak run --nosocket=wayland md.obsidian.Obsidian
 ```
 
+### Nvidia
+
+There's currently a check in place to disable GPU sandboxing when an Nvidia GPU is detected to avoid potential driver issues on Wayland. Alternatively, `--nosocket=wayland` may be used to fall back to XWayland.
+
 ### Broken functionality on Wayland
 
 There are some features that may not work with Obsidian when running as a native Wayland client:
@@ -41,6 +45,7 @@ There are some features that may not work with Obsidian when running as a native
     * Fcitx5 with KDE Plasma: **[works now if configured correctly](https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#KDE%20Plasma)**.
 
 2. [Pen tablet support](https://github.com/flathub/md.obsidian.Obsidian/issues/345)
+3. [Window borders and window shadows](https://github.com/flathub/md.obsidian.Obsidian/issues/433)
 
 ## GPU acceleration
 
@@ -49,7 +54,6 @@ GPU acceleration may need to be disabled to avoid launching with graphical bugs:
 ```
 $ flatpak override --user --env=OBSIDIAN_DISABLE_GPU=1 md.obsidian.Obsidian
 ```
-
 
 ## Pandoc support
 
