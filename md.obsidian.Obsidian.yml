@@ -82,8 +82,8 @@ modules:
     sources:
       - type: archive
         strip-components: 1
-        url: https://github.com/git-lfs/git-lfs/releases/download/v3.6.1/git-lfs-linux-amd64-v3.6.1.tar.gz
-        sha256: 2138d2e405a12f1a088272e06790b76699b79cb90d0317b77aafaf35de908d76
+        url: https://github.com/git-lfs/git-lfs/releases/download/v3.7.0/git-lfs-linux-amd64-v3.7.0.tar.gz
+        sha256: e7ebba491af8a54e560be3a00666fa97e4cf2bbbb223178a0934b8ef74cf9bed
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -93,8 +93,8 @@ modules:
           version-query: .tag_name
       - type: archive
         strip-components: 1
-        url: https://github.com/git-lfs/git-lfs/releases/download/v3.6.1/git-lfs-linux-arm64-v3.6.1.tar.gz
-        sha256: 1c2720ff53528fbe769633d448d830aa7b682141e3c4f6a9f26b9cf3b2548d0a
+        url: https://github.com/git-lfs/git-lfs/releases/download/v3.7.0/git-lfs-linux-arm64-v3.7.0.tar.gz
+        sha256: 88c24cb0c772cb6570e70f336ef4bb7b6539c5fb9ebeda563e9a5458ca82a98e
         only-arches: [aarch64]
         x-checker-data:
           type: json
