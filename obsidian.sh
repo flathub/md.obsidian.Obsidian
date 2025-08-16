@@ -70,6 +70,13 @@ if [[ "${OBSIDIAN_CLEAN_CACHE}" -eq 1 ]]; then
     done
 fi
 
+if [[ ! -f "/usr/bin/x86_64" ]]; then
+    echo "Debug: Detected non-x86_64 / ARM system. Adding --js-flags for stability"
+    EXTRA_ARGS+=(
+        --js-flags="--nodecommit_pooled_pages"
+    )
+fi
+
 echo "Debug: Will run Obsidian with the following arguments: ${EXTRA_ARGS[@]}"
 echo "Debug: Additionally, user gave: $@"
 
