@@ -50,8 +50,8 @@ modules:
       - find . -type f -name perllocal.pod -delete
     sources:
       - type: archive
-        sha256: 7e3e6c36decbd8f1eedd14d42db6674be03671c2204864befa2a41756c5c8fc4
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.50.1.tar.xz
+        sha256: 60a7c2251cc2e588d5cd87bae567260617c6de0c22dca9cdbfc4c7d2b8990b62
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.51.0.tar.xz
         x-checker-data:
           type: html
           url: https://mirrors.edge.kernel.org/pub/software/scm/git/
@@ -204,8 +204,8 @@ modules:
       - cp -r * ${FLATPAK_DEST}
     sources:
       - type: archive
-        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.8.10/obsidian-1.8.10.tar.gz
-        sha256: c59a22e19f4930cfc510f7ef8c15c46a0de94ffb891fd76f169f2a1e74c534a1
+        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.9.10/obsidian-1.9.10.tar.gz
+        sha256: e5df71f7636ef1dcc01829d37981e6bf95d037a696c517a64728c2eb037a9434
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -215,8 +215,8 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           is-main-source: true
       - type: archive
-        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.8.10/obsidian-1.8.10-arm64.tar.gz
-        sha256: b4aa50e276ebadbbd6e5d42dd983ef362e1c47599559fcdbfcaf6601ddc91e72
+        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.9.10/obsidian-1.9.10-arm64.tar.gz
+        sha256: e675eb2f59efb753f9db69586a293c926118ebd12e69ce5e36aecac95edb2d67
         only-arches: [aarch64]
         x-checker-data:
           type: json
