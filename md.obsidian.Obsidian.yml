@@ -50,8 +50,8 @@ modules:
       - find . -type f -name perllocal.pod -delete
     sources:
       - type: archive
-        sha256: 60a7c2251cc2e588d5cd87bae567260617c6de0c22dca9cdbfc4c7d2b8990b62
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.51.0.tar.xz
+        sha256: a83fd9ffaed7eee679ed92ceb06f75b4615ebf66d3ac4fbdbfbc9567dc533f4a
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.51.1.tar.xz
         x-checker-data:
           type: html
           url: https://mirrors.edge.kernel.org/pub/software/scm/git/
@@ -123,8 +123,8 @@ modules:
       - install -Dm755 bin/gh ${FLATPAK_DEST}/bin/gh
     sources:
       - type: archive
-        sha256: d507c82e3ae47af875b93472f39e01cbf9f85808ec0a69751e0932a43514d7ff
-        url: https://github.com/cli/cli/releases/download/v2.81.0/gh_2.81.0_linux_amd64.tar.gz
+        sha256: aba32dd552112101464941c7b5ee5f097896e1e234eb99581ff1652f44c4009a
+        url: https://github.com/cli/cli/releases/download/v2.82.0/gh_2.82.0_linux_amd64.tar.gz
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -133,8 +133,8 @@ modules:
             | .browser_download_url
           version-query: .tag_name | sub("^v"; "")
       - type: archive
-        sha256: 766adda9877afaf55f67626ff5d956bcea84f1e5371df5765ba30b1e786a86fd
-        url: https://github.com/cli/cli/releases/download/v2.81.0/gh_2.81.0_linux_arm64.tar.gz
+        sha256: b67206677153562deaa45382227123b1313bd0b304ac8e3239923dd5a671d4c1
+        url: https://github.com/cli/cli/releases/download/v2.82.0/gh_2.82.0_linux_arm64.tar.gz
         only-arches: [aarch64]
         x-checker-data:
           type: json
