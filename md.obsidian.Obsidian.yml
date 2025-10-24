@@ -123,8 +123,8 @@ modules:
       - install -Dm755 bin/gh ${FLATPAK_DEST}/bin/gh
     sources:
       - type: archive
-        sha256: aba32dd552112101464941c7b5ee5f097896e1e234eb99581ff1652f44c4009a
-        url: https://github.com/cli/cli/releases/download/v2.82.0/gh_2.82.0_linux_amd64.tar.gz
+        sha256: afada88676dfccea384e6cc28ae990b3e31bbc55f9d75c4697f902c757fa462b
+        url: https://github.com/cli/cli/releases/download/v2.82.1/gh_2.82.1_linux_amd64.tar.gz
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -133,8 +133,8 @@ modules:
             | .browser_download_url
           version-query: .tag_name | sub("^v"; "")
       - type: archive
-        sha256: b67206677153562deaa45382227123b1313bd0b304ac8e3239923dd5a671d4c1
-        url: https://github.com/cli/cli/releases/download/v2.82.0/gh_2.82.0_linux_arm64.tar.gz
+        sha256: 80b467daabeabf4379b5b7138f4b8b47f56670cc615ab288361a602ce413d8bf
+        url: https://github.com/cli/cli/releases/download/v2.82.1/gh_2.82.1_linux_arm64.tar.gz
         only-arches: [aarch64]
         x-checker-data:
           type: json
@@ -174,8 +174,8 @@ modules:
       - install -Dm755 rg ${FLATPAK_DEST}/bin/rg
     sources:
       - type: archive
-        sha256: 253ad0fd5fef0d64cba56c70dccdacc1916d4ed70ad057cc525fcdb0c3bbd2a7
-        url: https://github.com/BurntSushi/ripgrep/releases/download/15.0.0/ripgrep-15.0.0-x86_64-unknown-linux-musl.tar.gz
+        sha256: 1c9297be4a084eea7ecaedf93eb03d058d6faae29bbc57ecdaf5063921491599
+        url: https://github.com/BurntSushi/ripgrep/releases/download/15.1.0/ripgrep-15.1.0-x86_64-unknown-linux-musl.tar.gz
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -184,8 +184,8 @@ modules:
             | .browser_download_url
           version-query: .tag_name
       - type: archive
-        sha256: 15f8cc2fab12d88491c54d49f38589922a9d6a7353c29b0a0856727bcdf80754
-        url: https://github.com/BurntSushi/ripgrep/releases/download/15.0.0/ripgrep-15.0.0-aarch64-unknown-linux-gnu.tar.gz
+        sha256: 2b661c6ef508e902f388e9098d9c4c5aca72c87b55922d94abdba830b4dc885e
+        url: https://github.com/BurntSushi/ripgrep/releases/download/15.1.0/ripgrep-15.1.0-aarch64-unknown-linux-gnu.tar.gz
         only-arches: [aarch64]
         x-checker-data:
           type: json
