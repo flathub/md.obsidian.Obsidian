@@ -53,6 +53,10 @@ if [[ -e "${XDG_RUNTIME_DIR}/${WL_DISPLAY}" || -e "/${WL_DISPLAY}" ]]; then
             --disable-gpu-sandbox
         )
     fi
+else
+    EXTRA_ARGS+=(
+        --ozone-platform=x11
+    )
 fi
 
 # The cache files created by Electron and Mesa can become incompatible when there's an upgrade to
