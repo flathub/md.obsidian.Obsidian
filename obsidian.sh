@@ -21,6 +21,24 @@ add_argument() {
     fi
 }
 
+
+# Borrowed from: https://github.com/flathub/org.signal.Signal/blob/f43c8a387d29ae33286b49f959e4ac91baf9e7f7/signal-desktop.sh#L36
+case "${OBSIDIAN_PASSWORD_STORE}" in
+basic | gnome-libsecret | kwallet | kwallet5 | kwallet6)
+    echo "Debug: Using password store: ${OBSIDIAN_PASSWORD_STORE}"
+    EXTRA_ARGS=(
+        "--password-store=${OBSIDIAN_PASSWORD_STORE}"
+    )
+    ;;
+none)
+    echo "Debug: No password store set."
+    ;;
+*)
+    echo "Error: OBSIDIAN_PASSWORD_STORE (${OBSIDIAN_PASSWORD_STORE}) must be one of the following: none, basic, gnome-libsecret, kwallet, kwallet5, kwallet6"
+    exit 1
+    ;;
+esac
+
 if [[ -f "${OBSIDIAN_USER_ARGS_FILE}" && -s "${OBSIDIAN_USER_ARGS_FILE}" ]]; then
     for LINE in $(grep -v "^ *#" "${OBSIDIAN_USER_ARGS_FILE}"); do
         EXTRA_ARGS+=("${LINE}")
