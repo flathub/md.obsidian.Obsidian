@@ -6,8 +6,8 @@ build-commands:
     --prefix=${FLATPAK_DEST} "git-remote-codecommit" --no-build-isolation
 sources:
   - type: file
-    url: https://files.pythonhosted.org/packages/3d/8d/6d7b016383b1f74dd93611b1c5078bbaddaca901553ab886dcda87cae365/botocore-1.42.30-py3-none-any.whl
-    sha256: 97070a438cac92430bb7b65f8ebd7075224f4a289719da4ee293d22d1e98db02
+    url: https://files.pythonhosted.org/packages/e6/51/aac7e419521d5519e13087a7198623655648c939822bd7f4bdc9ccbe07f9/botocore-1.42.42-py3-none-any.whl
+    sha256: 1c9df5fc31e9073a9aa956271c4007d72f5d342cafca5f4154ea099bc6f83085
     x-checker-data:
       name: botocore
       packagetype: bdist_wheel
@@ -19,8 +19,8 @@ sources:
       name: git-remote-codecommit
       type: pypi
   - type: file
-    url: https://files.pythonhosted.org/packages/31/b4/b9b800c45527aadd64d5b442f9b932b00648617eb5d63d2c7a6587b7cafc/jmespath-1.0.1-py3-none-any.whl
-    sha256: 02e2e4cc71b5bcab88332eebf907519190dd9e6e82107fa7f83b1003a6252980
+    url: https://files.pythonhosted.org/packages/14/2f/967ba146e6d58cf6a652da73885f52fc68001525b4197effc174321d70b4/jmespath-1.1.0-py3-none-any.whl
+    sha256: a5663118de4908c91729bea0acadca56526eb2698e83de10cd116ae0f4e97c64
     x-checker-data:
       name: jmespath
       packagetype: bdist_wheel
