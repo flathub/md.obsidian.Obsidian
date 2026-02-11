@@ -11,6 +11,24 @@ First [add](https://flatpak.org/setup) Flathub repository. Then run:
 $ flatpak install md.obsidian.Obsidian
 ```
 
+## User flags
+
+Additional user flags may be persistently set by putting them in `user-flags.conf`.
+
+### Password store
+
+A password store option may need to be explicitly configured using `--password-store=<PASSWORD_STORE>`. For example,
+
+```
+$ echo "--password-store=gnome-libsecret" >> ~/.var/app/md.obsidian.Obsidian/config/obsidian/user-flags.conf
+```
+
+Expanding DBus access may be needed as well:
+
+```
+$ flatpak override --user --talk-name=org.freedesktop.DBus md.obsidian.Obsidian
+```
+
 ## Wayland support
 
 Obsidian has a fairly complete Wayland backend which brings about several improvements over X11/XWayland, including:
