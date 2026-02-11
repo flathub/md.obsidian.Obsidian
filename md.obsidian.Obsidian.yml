@@ -16,6 +16,8 @@ finish-args:
   - --socket=x11
   - --socket=pulseaudio
   - --socket=ssh-auth
+  # Required for accessing keys from a keyring
+  - --talk-name=org.freedesktop.secrets
   - --device=dri
   - --filesystem=home
   - --filesystem=/mnt
