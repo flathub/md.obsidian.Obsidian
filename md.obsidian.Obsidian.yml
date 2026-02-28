@@ -36,6 +36,7 @@ finish-args:
   - --env=OBSIDIAN_CLEAN_CACHE=1
   - --env=XCURSOR_PATH=/run/host/user-share/icons:/run/host/share/icons:~/.icons
   - --env=PATH=/usr/bin:/app/bin:/app/texlive/bin:/app/texlive/bin/x86_64-linux:/app/texlive/bin/aarch64-linux
+  - --env=DEBUG_LOG=0
 cleanup:
   - /bin/__pycache__
 modules:

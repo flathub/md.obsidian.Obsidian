@@ -21,11 +21,15 @@ add_argument() {
     fi
 }
 
+debug_print() {
+    [[ "${DEBUG_LOG:-0}" -eq 1 ]] && echo "Debug: $@" ||:
+}
+
 if [[ -f "${OBSIDIAN_USER_ARGS_FILE}" && -s "${OBSIDIAN_USER_ARGS_FILE}" ]]; then
     for LINE in $(grep -v "^ *#" "${OBSIDIAN_USER_ARGS_FILE}"); do
         EXTRA_ARGS+=("${LINE}")
     done
-    echo "Debug: Found user flags file \"${OBSIDIAN_USER_ARGS_FILE}\" with args \"${EXTRA_ARGS[@]}\""
+    debug_print "Found user flags file \"${OBSIDIAN_USER_ARGS_FILE}\" with args \"${EXTRA_ARGS[@]}\""
 fi
 
 # Nvidia GPUs may need to disable GPU acceleration:
@@ -40,7 +44,7 @@ WL_DISPLAY="${WAYLAND_DISPLAY:-"wayland-0"}"
 # Some compositors use a real path instead of a symlink for WAYLAND_DISPLAY:
 # https://github.com/flathub/md.obsidian.Obsidian/issues/284
 if [[ -e "${XDG_RUNTIME_DIR}/${WL_DISPLAY}" || -e "/${WL_DISPLAY}" ]]; then
-    echo "Debug: Enabling Wayland backend"
+    debug_print "Enabling Wayland backend"
     EXTRA_ARGS+=(
         --ozone-platform-hint=auto
         --enable-features=WaylandWindowDecorations
@@ -48,7 +52,7 @@ if [[ -e "${XDG_RUNTIME_DIR}/${WL_DISPLAY}" || -e "/${WL_DISPLAY}" ]]; then
         --wayland-text-input-version=3
     )
     if [[ -c "/dev/nvidia0" ]]; then
-        echo "Debug: Detecting Nvidia GPU on Wayland, disabling GPU sandbox"
+        debug_print "Detecting Nvidia GPU on Wayland, disabling GPU sandbox"
         EXTRA_ARGS+=(
             --disable-gpu-sandbox
         )
@@ -68,21 +72,21 @@ if [[ "${OBSIDIAN_CLEAN_CACHE}" -eq 1 ]]; then
     )
     for CACHE_DIRECTORY in "${CACHE_DIRECTORIES[@]}"; do
         if [[ -d "${CACHE_DIRECTORY}" ]]; then
-            echo "Deleting cache directory: ${CACHE_DIRECTORY}"
+            debug_print "Deleting cache directory: ${CACHE_DIRECTORY}"
             rm -rf "${CACHE_DIRECTORY}"
         fi
     done
 fi
 
 if [[ ! -f "/usr/bin/x86_64" ]]; then
-    echo "Debug: Detected non-x86_64 / ARM system. Adding --js-flags for stability"
+    echo "Detected non-x86_64 / ARM system. Adding --js-flags for stability"
     EXTRA_ARGS+=(
         --js-flags="--nodecommit_pooled_pages"
     )
 fi
 
-echo "Debug: Will run Obsidian with the following arguments: ${EXTRA_ARGS[@]}"
-echo "Debug: Additionally, user gave: $@"
+debug_print "Will run Obsidian with the following arguments: ${EXTRA_ARGS[@]}"
+debug_print "Additionally, user gave: $@"
 
 export FLATPAK_ID="${FLATPAK_ID:-md.obsidian.Obsidian}"
 export TMPDIR="${XDG_RUNTIME_DIR}/app/${FLATPAK_ID}"
