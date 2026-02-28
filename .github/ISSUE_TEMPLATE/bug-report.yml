@@ -47,7 +47,7 @@ body:
     attributes:
       label: Logs
       description: |
-        Please attach logs from `flatpak run md.obsidian.Obsidian`
+        Please attach logs from `flatpak run --env=DEBUG_LOG=1 md.obsidian.Obsidian`
       render: 'bash session'
     validations:
       required: false
