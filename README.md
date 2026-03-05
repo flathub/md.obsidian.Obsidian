@@ -35,6 +35,7 @@ Obsidian has a fairly complete Wayland backend which brings about several improv
 
 * fractional scaling
 * multi-touch gestures such as pinch-zoom
+* retains window sizing and in-app scaling (Settings > Appearance) across restarts
  
 Wayland support can be enabled by setting the environment variable `--socket=wayland` either using [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal), or the command line, like so:
 
