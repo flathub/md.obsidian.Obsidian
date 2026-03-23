@@ -126,8 +126,8 @@ modules:
       - install -Dm755 bin/gh ${FLATPAK_DEST}/bin/gh
     sources:
       - type: archive
-        sha256: c6e5537631fca45f277ef405ce8751d139b491e9402cc20891a003525a8773b2
-        url: https://github.com/cli/cli/releases/download/v2.87.3/gh_2.87.3_linux_amd64.tar.gz
+        sha256: 36352a993b97e9758793cdb87f9ba674bd6d88c914488e122be78a1962203803
+        url: https://github.com/cli/cli/releases/download/v2.88.1/gh_2.88.1_linux_amd64.tar.gz
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -136,8 +136,8 @@ modules:
             | .browser_download_url
           version-query: .tag_name | sub("^v"; "")
       - type: archive
-        sha256: 5f5d89563bf26751e2173b37e594065504e85b6b781c1f1832d24bf2c2b4554f
-        url: https://github.com/cli/cli/releases/download/v2.87.3/gh_2.87.3_linux_arm64.tar.gz
+        sha256: 039ce25aab0cfa0ea5160e3db75ed44699bde4b20ff63ec5991f82201f1b33b8
+        url: https://github.com/cli/cli/releases/download/v2.88.1/gh_2.88.1_linux_arm64.tar.gz
         only-arches: [aarch64]
         x-checker-data:
           type: json
@@ -152,8 +152,8 @@ modules:
       - install -Dm755 bin/pandoc ${FLATPAK_DEST}/bin/pandoc
     sources:
       - type: archive
-        sha256: 872a10c7ec29d5278831d855b11bd4ade0df4d5ec9a089a3197bc63a37eb4003
-        url: https://github.com/jgm/pandoc/releases/download/3.9/pandoc-3.9-linux-amd64.tar.gz
+        sha256: a69abfababda8a56969a254b09f9553a7be89ddec00d4e0fe9fd585d71a67508
+        url: https://github.com/jgm/pandoc/releases/download/3.9.0.2/pandoc-3.9.0.2-linux-amd64.tar.gz
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -162,8 +162,8 @@ modules:
             | .browser_download_url
           version-query: .tag_name
       - type: archive
-        sha256: e09b97d7313bd417a35bde6c747c458486ec84f696e1cfd0f8c527cd69c89433
-        url: https://github.com/jgm/pandoc/releases/download/3.9/pandoc-3.9-linux-arm64.tar.gz
+        sha256: b6d21e8f9c3b15744f5a7ab40248019157ed7793875dbe0383d4c82ff572b528
+        url: https://github.com/jgm/pandoc/releases/download/3.9.0.2/pandoc-3.9.0.2-linux-arm64.tar.gz
         only-arches: [aarch64]
         x-checker-data:
           type: json
@@ -207,8 +207,8 @@ modules:
       - cp -r * ${FLATPAK_DEST}
     sources:
       - type: archive
-        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.12.4/obsidian-1.12.4.tar.gz
-        sha256: 72eb26dfcf123f8e07be8083f74fa045f400c71ec1fe64e58ab91d9cc084c8de
+        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.12.7/obsidian-1.12.7.tar.gz
+        sha256: fcbe08b111d9c1fdb09b9c08952b06e1c829c62163eba2584c4b4ec859be079d
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -218,8 +218,8 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           is-main-source: true
       - type: archive
-        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.12.4/obsidian-1.12.4-arm64.tar.gz
-        sha256: 7c20891321ca4e02d2f2744e038437c832c586e9e553fc86b4f2ede2c8b1fbd8
+        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.12.7/obsidian-1.12.7-arm64.tar.gz
+        sha256: 6bc8727bfdbb6d731d5af9a06f51d6de7061c68c908c8ae8b43a9ed379a20260
         only-arches: [aarch64]
         x-checker-data:
           type: json
