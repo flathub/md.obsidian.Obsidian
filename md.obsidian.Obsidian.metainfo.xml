@@ -18,15 +18,19 @@
   <screenshots>
     <screenshot type="default">
       <image type="source">https://obsidian.md/images/screenshot.png</image>
+      <caption xml:lang="en">Screenshot of Obsidian's main interface</caption>
     </screenshot>
     <screenshot>
       <image type="source">https://obsidian.md/images/formatting.png</image>
+      <caption xml:lang="en">Examples of Obsidian's basic text formatting capabilities</caption>
     </screenshot>
     <screenshot>
       <image type="source">https://obsidian.md/images/graph-view.png</image>
+      <caption xml:lang="en">Screenshot of Obsidian's graph view</caption>
     </screenshot>
     <screenshot>
       <image type="source">https://obsidian.md/images/multi-pane.png</image>
+      <caption xml:lang="en">Example of Obsidian's multi-pane (now multi-tab) layout capabilities</caption>
     </screenshot>
   </screenshots>
   <releases>
