@@ -13,7 +13,8 @@ command: obsidian.sh
 tags:
   - proprietary
 finish-args:
-  - --socket=x11
+  - --socket=wayland
+  - --socket=fallback-x11
   - --socket=pulseaudio
   - --socket=ssh-auth
   # Required for accessing keys from a keyring
