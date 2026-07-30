@@ -9,8 +9,6 @@ add-extensions:
     directory: texlive
     no-autodownload: true
 sdk: org.freedesktop.Sdk
-sdk-extensions:
-  - org.freedesktop.Sdk.Extension.rust-stable
 command: obsidian.sh
 tags:
   - proprietary
@@ -43,17 +41,15 @@ cleanup:
   - /bin/__pycache__
 modules:
   - name: git
-    build-options:
-      append-path: /usr/lib/sdk/rust-stable/bin
-      env:
-        CARGO_HOME: /run/build/git/cargo
     make-args:
       - INSTALL_SYMLINKS=1
       - NO_PERL=YesPlease
+      - NO_RUST=YesPlease
       - NO_TCLTK=YesPlease
     make-install-args:
       - INSTALL_SYMLINKS=1
       - NO_PERL=YesPlease
+      - NO_RUST=YesPlease
       - NO_TCLTK=YesPlease
     post-install:
       - find . -type f -name perllocal.pod -delete
