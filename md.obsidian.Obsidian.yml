@@ -9,6 +9,8 @@ add-extensions:
     directory: texlive
     no-autodownload: true
 sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.rust-stable
 command: obsidian.sh
 tags:
   - proprietary
