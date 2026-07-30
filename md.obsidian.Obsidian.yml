@@ -43,6 +43,10 @@ cleanup:
   - /bin/__pycache__
 modules:
   - name: git
+    build-options:
+      append-path: /usr/lib/sdk/rust-stable/bin
+      env:
+        CARGO_HOME: /run/build/git/cargo
     make-args:
       - INSTALL_SYMLINKS=1
       - NO_PERL=YesPlease
