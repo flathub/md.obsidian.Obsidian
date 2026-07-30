@@ -37,16 +37,16 @@ Obsidian has a fairly complete Wayland backend which brings about several improv
 * multi-touch gestures such as pinch-zoom
 * retains window sizing and in-app scaling (Settings > Appearance) across restarts
  
-Wayland support can be enabled by setting the environment variable `--socket=wayland` either using [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal), or the command line, like so:
+Wayland support can be disabled by setting the environment variable `--nosocket=wayland` and `--socket=x11` either using [Flatseal](https://flathub.org/apps/details/com.github.tchx84.Flatseal), or the command line, like so:
 
 ```
-$ flatpak override --user --socket=wayland md.obsidian.Obsidian
+$ flatpak override --user --nosocket=wayland --socket=x11 md.obsidian.Obsidian
 ```
 
-Wayland support can also be temporarily enabled for a single run:
+Wayland support can also be temporarily disabled for a single run:
 
 ```
-$ flatpak run --socket=wayland md.obsidian.Obsidian
+$ flatpak run --nosocket=wayland --socket=x11 md.obsidian.Obsidian
 ```
 
 ### Nvidia
@@ -62,9 +62,6 @@ There are some features that may not work with Obsidian when running as a native
     * IBus with KDE Plasma: **[does not work as candidate window is misplaced](https://discuss.kde.org/t/ibus-candidate-window-is-misplaced-for-some-apps/3579)**.
     * Fcitx5 with GNOME: [**requires the kimpanel extension to treat Fcitx5 like IBus**](https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#GNOME).
     * Fcitx5 with KDE Plasma: **[works now if configured correctly](https://fcitx-im.org/wiki/Using_Fcitx_5_on_Wayland#KDE%20Plasma)**.
-
-2. [Pen tablet support](https://github.com/flathub/md.obsidian.Obsidian/issues/345)
-3. [Window borders and window shadows](https://github.com/flathub/md.obsidian.Obsidian/issues/433)
 
 ## GPU acceleration
 
