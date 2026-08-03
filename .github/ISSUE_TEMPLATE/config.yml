@@ -1,4 +1,4 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
 contact_links:
   - name: Upstream Obsidian issue tracker
     url: https://forum.obsidian.md/c/bug-reports/7
