@@ -10,7 +10,7 @@ body:
       options:
         - label: I have tested other [Obsidian builds (i.e., .tar.gz, .AppImage, .deb, etc)](https://github.com/obsidianmd/obsidian-releases/releases/latest) to confirm that this issue is flatpak-specific ([general Obsidian issues should be reported to the upstream issue tracker](https://forum.obsidian.md/c/bug-reports/7))
           required: true
-        - label: [I have checked other filed issues](https://github.com/flathub/md.obsidian.Obsidian/issues?q=is%3Aissue) to confirm that this is a new flatpak-specific issue
+        - label: I have checked [other filed issues](https://github.com/flathub/md.obsidian.Obsidian/issues?q=is%3Aissue) to confirm that this is a new flatpak-specific issue
           required: true
   - type: textarea
     attributes:
