@@ -2,13 +2,21 @@ name: Bug Report
 labels: ["bug"]
 description: 'File bugs that impact the flatpak version of Obsidian'
 body:
+  - type: checkboxes
+    attributes:
+      label: Prerequisites
+      description: |
+        Please confirm that the conditions listed below have been met.
+      options:
+        - label: I have tested other [Obsidian builds (i.e., .tar.gz, .AppImage, .deb, etc)](https://github.com/obsidianmd/obsidian-releases/releases/latest) to confirm that this issue is flatpak-specific ([general Obsidian issues should be reported to the upstream issue tracker](https://forum.obsidian.md/c/bug-reports/7))
+          required: true
+        - label: [I have checked other filed issues](https://github.com/flathub/md.obsidian.Obsidian/issues?q=is%3Aissue) to confirm that this is a new flatpak-specific issue
+          required: true
   - type: textarea
     attributes:
       label: Description
       description: |
         Please describe what happened.
-        Also, please test other Obsidian builds (i.e., .tar.gz, .AppImage, .deb, etc) first to ensure this is a flatpak-specific issue: https://github.com/obsidianmd/obsidian-releases/releases
-        Otherwise, please file a bug in the upstream issue tracker: https://forum.obsidian.md/c/bug-reports/7
     validations:
       required: true
   - type: textarea
