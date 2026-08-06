@@ -19,6 +19,7 @@ finish-args:
   - --socket=ssh-auth
   # Required for accessing keys from a keyring
   - --talk-name=org.freedesktop.secrets
+  - --talk-name=org.kde.kwalletd6
   - --device=dri
   - --filesystem=home
   - --filesystem=/mnt

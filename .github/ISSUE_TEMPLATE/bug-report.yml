@@ -12,6 +12,8 @@ body:
           required: true
         - label: I have checked other filed issues to confirm that this is a new flatpak-specific issue (https://github.com/flathub/md.obsidian.Obsidian/issues?q=is%3Aissue)
           required: true
+        - label: I have have looked for feasible workarounds in the README (https://github.com/flathub/md.obsidian.Obsidian/blob/master/README.md)
+          required: true
   - type: textarea
     attributes:
       label: Description

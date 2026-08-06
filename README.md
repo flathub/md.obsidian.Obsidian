@@ -17,7 +17,16 @@ Additional user flags may be persistently set by putting them in `user-flags.con
 
 ### Password store
 
-A password store option may need to be explicitly configured using `--password-store=<PASSWORD_STORE>`. For example,
+A password store option may need to be explicitly configured using [`--password-store=<PASSWORD_STORE>`](https://source.chromium.org/chromium/chromium/src/+/main:docs/linux/password_storage.md). The following password store backends are available:
+
+
+* `--password-store=gnome-libsecret`
+* `--password-store=kwallet`
+* `--password-store=kwallet5`
+* `--password-store=kwallet6`
+* `--password-store=basic`
+
+For example:
 
 ```
 $ echo "--password-store=gnome-libsecret" >> ~/.var/app/md.obsidian.Obsidian/config/obsidian/user-flags.conf
