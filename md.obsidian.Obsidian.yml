@@ -209,6 +209,8 @@ modules:
       - mv obsidian.sh                bin/obsidian.sh
       - mv ${FLATPAK_ID}.metainfo.xml share/metainfo/${FLATPAK_ID}.metainfo.xml
       - cp -r * ${FLATPAK_DEST}
+      # required for wayland, cf. https://docs.flatpak.org/en/latest/electron.html#using-correct-desktop-file-name
+      - patch-electron-desktop-filename ${FLATPAK_DEST}/resources/app.asar
     sources:
       - type: archive
         url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.13.4/obsidian-1.13.4.tar.gz
