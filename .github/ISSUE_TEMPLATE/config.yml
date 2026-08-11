@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Upstream Obsidian issue tracker
+  - name: Upstream Obsidian bug tracker
     url: https://forum.obsidian.md/c/bug-reports/7
-    about: Issue tracker for anything that impacts Obsidian across all builds (.snap, .deb, .AppImage, flatpak, etc)
+    about: Bug tracker for any bug that impacts Obsidian across all builds (.snap, .deb, .AppImage, flatpak, etc)
+  - name: Upstream Obsidian feature requests
+    url: https://forum.obsidian.md/c/feature-requests/8
+    about: Feature requests that may benefit all Obsidian builds (including flatpak)
