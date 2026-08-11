@@ -7,7 +7,7 @@ body:
     attributes:
       label: Additional feature, program, sandbox permission, etc
       description: |
-        Describe why this enhancement should be in the Obsidian flatpak
+        Describe why this enhancement should be in the Obsidian flatpak (upstream feature requests should be made at https://forum.obsidian.md/c/feature-requests/8)
       placeholder: |
         Tell us what you need
       value: |

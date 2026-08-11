@@ -8,7 +8,7 @@ body:
       description: |
         Please confirm that the conditions listed below have been met.
       options:
-        - label: I have tested upstream Obsidian builds (i.e., .tar.gz, .AppImage, .deb, etc, from https://github.com/obsidianmd/obsidian-releases/releases/latest) to confirm that this issue is flatpak-specific (general Obsidian issues should be reported to the upstream issue tracker at https://forum.obsidian.md/c/bug-reports/7)
+        - label: I have tested upstream Obsidian builds (i.e., .tar.gz, .AppImage, .deb, etc, from https://github.com/obsidianmd/obsidian-releases/releases/latest) to confirm that this issue is flatpak-specific (general Obsidian issues should be reported to the upstream bug tracker at https://forum.obsidian.md/c/bug-reports/7)
           required: true
         - label: I have checked other filed issues to confirm that this is a new flatpak-specific issue (https://github.com/flathub/md.obsidian.Obsidian/issues?q=is%3Aissue)
           required: true
