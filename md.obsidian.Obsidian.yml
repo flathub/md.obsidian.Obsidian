@@ -117,8 +117,8 @@ modules:
       - ln -s gnome-ssh-askpass ${FLATPAK_DEST}/libexec/openssh/ssh-askpass
     sources:
       - type: archive
-        sha256: ef6026dd2aea8d56059638d5d3262902c892ceba9f88395835e0d06d3fb63238
-        url: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.4p1.tar.gz
+        sha256: d44d28a839ea9daf969cc69150fde59910b2b39361dad81a3bd6cbd19218db11
+        url: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.5p1.tar.gz
         x-checker-data:
           type: html
           url: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/
@@ -211,8 +211,8 @@ modules:
       - cp -r * ${FLATPAK_DEST}
     sources:
       - type: archive
-        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.13.6/obsidian-1.13.6.tar.gz
-        sha256: 325cb381c649ba62b4475627b416dc3929dc913d839e4bba766307863f63f8a5
+        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.13.7/obsidian-1.13.7.tar.gz
+        sha256: d3cbe375cbfa4024db1910b98191649f4134c5c48aee5e60b6e7713987dcdb28
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -222,8 +222,8 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           is-main-source: true
       - type: archive
-        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.13.6/obsidian-1.13.6-arm64.tar.gz
-        sha256: 96ff3e5a48431d20333c369866dcab2a31dde566adef8e7f6059e6c4ea3acb21
+        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.13.7/obsidian-1.13.7-arm64.tar.gz
+        sha256: 98aac34d1f132a35cf506fc3fa196d595dcdeefdebd44b0cc5faaa7a1a210de2
         only-arches: [aarch64]
         x-checker-data:
           type: json
