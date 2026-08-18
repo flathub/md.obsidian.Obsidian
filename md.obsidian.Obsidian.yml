@@ -20,6 +20,9 @@ finish-args:
   # Required for accessing keys from a keyring
   - --talk-name=org.freedesktop.secrets
   - --talk-name=org.kde.kwalletd6
+  # Required for obsidian-tray plugin support
+  - --talk-name=org.kde.StatusNotifierWatcher
+  - --own-name=org.freedesktop.StatusNotifierItem-2-1
   - --device=dri
   - --filesystem=home
   - --filesystem=/mnt
