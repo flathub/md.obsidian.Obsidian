@@ -1,11 +1,11 @@
 app-id: md.obsidian.Obsidian
 base: org.electronjs.Electron2.BaseApp
-base-version: '25.08'
+base-version: '26.08'
 runtime: org.freedesktop.Platform
-runtime-version: '25.08'
+runtime-version: '26.08'
 add-extensions:
   org.freedesktop.Sdk.Extension.texlive:
-    version: '25.08'
+    version: '26.08'
     directory: texlive
     no-autodownload: true
 sdk: org.freedesktop.Sdk
