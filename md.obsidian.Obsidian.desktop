@@ -6,5 +6,5 @@ Type=Application
 Icon=md.obsidian.Obsidian
 StartupWMClass=md.obsidian.Obsidian
 Comment=Obsidian
-MimeType=x-scheme-handler/obsidian;
+MimeType=application/pdf;text/markdown;application/x-obsidian-canvas;application/x-obsidian-base;x-scheme-handler/obsidian;
 Categories=Office;
