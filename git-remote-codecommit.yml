@@ -1,4 +1,4 @@
-# Generated with flatpak-pip-generator git-remote-codecommit --runtime org.freedesktop.Sdk//25.08 --checker-data --yaml
+# Generated with flatpak-pip-generator git-remote-codecommit --runtime org.freedesktop.Sdk//26.08 --checker-data --yaml
 name: python3-git-remote-codecommit
 buildsystem: simple
 build-commands:
@@ -9,40 +9,40 @@ sources:
     url: https://files.pythonhosted.org/packages/9c/ce/61b39a8e7a69af5ea43c1c3e1b0065a4866b42ccddf107e16686a3143614/botocore-1.43.118-py3-none-any.whl
     sha256: a45d7ae570674161e4a3542d8c68633bf7503f92d1de781ef7361b79488eda6f
     x-checker-data:
+      type: pypi
       name: botocore
       packagetype: bdist_wheel
-      type: pypi
   - type: file
     url: https://files.pythonhosted.org/packages/6c/a0/feb4dfa42e8cb1a0bd91667233254e49696cf6618f51ad5629f6efd89dae/git-remote-codecommit-1.17.tar.gz
     sha256: fd4a9ba3fbd88cd455a8e2087765e415da0beaae9932d4e84010069a536de24e
     x-checker-data:
-      name: git-remote-codecommit
       type: pypi
+      name: git-remote-codecommit
   - type: file
     url: https://files.pythonhosted.org/packages/14/2f/967ba146e6d58cf6a652da73885f52fc68001525b4197effc174321d70b4/jmespath-1.1.0-py3-none-any.whl
     sha256: a5663118de4908c91729bea0acadca56526eb2698e83de10cd116ae0f4e97c64
     x-checker-data:
+      type: pypi
       name: jmespath
       packagetype: bdist_wheel
-      type: pypi
   - type: file
-    url: https://files.pythonhosted.org/packages/5a/17/cebee01d1c0c1441174cf0456ddc91b280d79acb65340c05e41d77866ee8/python_dateutil-3.0.0-py2.py3-none-any.whl
-    sha256: 3c79630202e4152c6add678446984236efe4f57e84d8e892aab0637bab82e9fd
+    url: https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl
+    sha256: a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427
     x-checker-data:
-      name: python_dateutil
-      packagetype: bdist_wheel
       type: pypi
+      name: python-dateutil
+      packagetype: bdist_wheel
   - type: file
     url: https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl
     sha256: 4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274
     x-checker-data:
+      type: pypi
       name: six
       packagetype: bdist_wheel
-      type: pypi
   - type: file
     url: https://files.pythonhosted.org/packages/92/9d/c4e665119135114480843e7ab388fa94d8480650450e6f8e26b70d323a4c/urllib3-2.8.0-py3-none-any.whl
     sha256: 0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3
     x-checker-data:
+      type: pypi
       name: urllib3
       packagetype: bdist_wheel
-      type: pypi
