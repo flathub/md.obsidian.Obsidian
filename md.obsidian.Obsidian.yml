@@ -60,8 +60,8 @@ modules:
       - find . -type f -name perllocal.pod -delete
     sources:
       - type: archive
-        sha256: 26c56c296b38c0695b26fa95f475f1d01704d2d38e73465ca30b0b2f5dc789d3
-        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.56.0.tar.xz
+        sha256: f0b0bf89264b9bd2e1c640363e7529643989da76281600473c50745cd34a607f
+        url: https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.56.1.tar.xz
         x-checker-data:
           type: html
           url: https://mirrors.edge.kernel.org/pub/software/scm/git/
@@ -120,8 +120,8 @@ modules:
       - ln -s gnome-ssh-askpass ${FLATPAK_DEST}/libexec/openssh/ssh-askpass
     sources:
       - type: archive
-        sha256: a9dc9565dffe8640f64d863cd29a32bc4a3dbdec0566a7fc44c5d6ee767d5f39
-        url: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.6p1.tar.gz
+        sha256: 9ae44872090cf2f06b3cf9ff147e7f16f309671340763ed2f99248398ae29d5b
+        url: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.6p2.tar.gz
         x-checker-data:
           type: html
           url: https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/
@@ -133,8 +133,8 @@ modules:
       - install -Dm755 bin/gh ${FLATPAK_DEST}/bin/gh
     sources:
       - type: archive
-        sha256: 4c806978ffce1cec70853302a56d70ac6da4f19bae7adca4e1a8ab00633dd91d
-        url: https://github.com/cli/cli/releases/download/v2.103.3/gh_2.103.3_linux_amd64.tar.gz
+        sha256: 98cb101ad87dbbd3f6b2f2bfcbd43197ccd07643140121d8a9cfaa91eadbc24e
+        url: https://github.com/cli/cli/releases/download/v2.104.0/gh_2.104.0_linux_amd64.tar.gz
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -143,8 +143,8 @@ modules:
             | .browser_download_url
           version-query: .tag_name | sub("^v"; "")
       - type: archive
-        sha256: ee32df2323c8847f5fac6cb6b4b69ca75828e9329a8f22f677021f7b3306ce63
-        url: https://github.com/cli/cli/releases/download/v2.103.3/gh_2.103.3_linux_arm64.tar.gz
+        sha256: cb34cefc6f4e77b90731374a2b737516bb8f3033c6ca46aa949e5344f68069e3
+        url: https://github.com/cli/cli/releases/download/v2.104.0/gh_2.104.0_linux_arm64.tar.gz
         only-arches: [aarch64]
         x-checker-data:
           type: json
@@ -159,8 +159,8 @@ modules:
       - install -Dm755 bin/pandoc ${FLATPAK_DEST}/bin/pandoc
     sources:
       - type: archive
-        sha256: 38aa33b325a2bc96a4c39409631212db55702f564250bcdbead180b3bf646389
-        url: https://github.com/jgm/pandoc/releases/download/3.13/pandoc-3.13-linux-amd64.tar.gz
+        sha256: c5f4720cdefb3f7bdc5d07202ef579feef0d1370773c873804dd8fdaa8c4f1b8
+        url: https://github.com/jgm/pandoc/releases/download/3.14/pandoc-3.14-linux-amd64.tar.gz
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -169,8 +169,8 @@ modules:
             | .browser_download_url
           version-query: .tag_name
       - type: archive
-        sha256: 21e1d4ba09bd0b334590d204580fd4f6629b21be4ab6a32b26cc98982e9e0c68
-        url: https://github.com/jgm/pandoc/releases/download/3.13/pandoc-3.13-linux-arm64.tar.gz
+        sha256: c692f3d78a415741bbbac4cdbbbe26fa7edca1f43d2301b982fbf4009cc8cf7f
+        url: https://github.com/jgm/pandoc/releases/download/3.14/pandoc-3.14-linux-arm64.tar.gz
         only-arches: [aarch64]
         x-checker-data:
           type: json
@@ -214,8 +214,8 @@ modules:
       - cp -r * ${FLATPAK_DEST}
     sources:
       - type: archive
-        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.15.0/obsidian-1.15.0.tar.gz
-        sha256: 75594ae09914ca0191dde13c0697dee653322287a3a806c15519332d9ada14d3
+        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.15.1/obsidian-1.15.1.tar.gz
+        sha256: 09074f0635ecf366307d808d0fec06c01a87a0bcc66da6d34126ceece0eb8519
         only-arches: [x86_64]
         x-checker-data:
           type: json
@@ -225,8 +225,8 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           is-main-source: true
       - type: archive
-        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.15.0/obsidian-1.15.0-arm64.tar.gz
-        sha256: 7e1bdd82fc65dcc3c03de5b8a85a8d79258f94642ba27987c2d1188b9763e903
+        url: https://github.com/obsidianmd/obsidian-releases/releases/download/v1.15.1/obsidian-1.15.1-arm64.tar.gz
+        sha256: acc219e57e2630c4936e7655126572b62167ea02c2e66f8c25c948ad072b4e70
         only-arches: [aarch64]
         x-checker-data:
           type: json
